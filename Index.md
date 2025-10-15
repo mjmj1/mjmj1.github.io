@@ -1,6 +1,9 @@
 ---
-title: Welcome 🐓
+layout: home   # 테마에 따라 page, default 등으로 바꿔야 할 수도 있음
+title: "Welcome"
+permalink: /
 ---
+
 현재 멀티 플레이 소셜 디덕션 장르에 AI를 접목한 게임 [The Zoo](https://github.com/mjmj1/The-Zoo) 개발에 집중하고 있습니다.  
 주요 관심사는 **Unity**, **C#**, **백엔드 개발**입니다.
 
