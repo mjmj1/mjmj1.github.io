@@ -150,6 +150,45 @@
     .featured-card .project-link:hover {
       background: #024eaa;
     }
+
+    .resume-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 1em;
+      background: #f8fafc;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .resume-table th,
+    .resume-table td {
+      padding: 14px 12px;
+      text-align: left;
+    }
+
+    .resume-table thead {
+      background: #e3eaf5;
+    }
+
+    .resume-table th {
+      font-weight: 600;
+      color: #2d3a4a;
+      border-bottom: 2px solid #d1d5db;
+    }
+
+    .resume-table tr {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .resume-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .resume-table tbody tr:hover {
+      background: #f1f5fb;
+    }
   </style>
 </head>
 
@@ -167,7 +206,7 @@
   <hr>
 
   <h2>🏢 이력</h2>
-  <table>
+  <table class="resume-table">
     <thead>
       <tr>
         <th>기간</th>
