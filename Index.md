@@ -1,5 +1,5 @@
 ---
-layout: home   # 테마에 따라 page, default 등으로 바꿔야 할 수도 있음
+layout: home
 title: "Welcome"
 permalink: /
 ---
