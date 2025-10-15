@@ -75,6 +75,80 @@
         color: #9cd9ff;
       }
     }
+
+    .project-box {
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 24px 20px;
+      margin: 32px 0;
+      background: #fafafa;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .project-box h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .project-box p,
+    .project-box ul,
+    .project-box iframe,
+    .project-box h4,
+    .project-box h5 {
+      margin-bottom: 10px;
+    }
+
+    .featured-projects {
+      display: flex;
+      gap: 24px;
+      margin: 32px 0;
+      flex-wrap: wrap;
+    }
+
+    .featured-card {
+      flex: 1 1 320px;
+      background: #fff;
+      border: 2px solid #e0e0e0;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      padding: 28px 22px 20px 22px;
+      transition: box-shadow 0.2s;
+      position: relative;
+      min-width: 320px;
+    }
+
+    .featured-card:hover {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+      border-color: #b3d1ff;
+    }
+
+    .featured-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.25em;
+    }
+
+    .featured-card p,
+    .featured-card ul {
+      margin-bottom: 10px;
+    }
+
+    .featured-card .project-link {
+      position: absolute;
+      top: 18px;
+      right: 22px;
+      background: #0366d6;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.95em;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .featured-card .project-link:hover {
+      background: #024eaa;
+    }
   </style>
 </head>
 
@@ -82,7 +156,9 @@
 
   <h1>Welcome 🐓</h1>
 
-  <p>현재 멀티 플레이 소셜 디덕션 장르에 AI를 접목한 게임
+  <p>
+    게임 개발자 및 백엔드 개발자를 지망하는 김만종입니다.<br>
+    현재 멀티 플레이 소셜 디덕션 장르에 AI를 접목한 게임
     <a href="https://github.com/mjmj1/The-Zoo" target="_blank">The Zoo</a> 개발에 집중하고 있습니다.<br>
     주요 관심사는 <b>Unity</b>, <b>C#</b>, <b>백엔드 개발</b>입니다.
   </p>
@@ -178,259 +254,264 @@
 
   <hr>
 
-  <h2>🚀 대표 프로젝트</h2>
-
-  <h3>🎮 The Zoo — 소셜 디덕션 멀티플레이 게임</h3>
-  <ul>
-    <li>Unity 6 + Netcode for GameObjects 기반 분산 권한 토폴로지 적용</li>
-    <li>ML-Agents를 활용한 AI NPC 적용</li>
-  </ul>
-  <p><b>Tech</b>: Unity · Netcode for GameObjects · ML-Agents<br>
-    <b>Link</b>: <a href="https://github.com/mjmj1/The-Zoo">https://github.com/mjmj1/The-Zoo</a>
-  </p>
-
-  <h3>📚 리딩 브릿지 — 생성형 AI 난독증 아동 교재 생성 서비스</h3>
-  <ul>
-    <li>생성형 AI로 학습 난이도·문장 구조를 조절한 맞춤형 교재 생성</li>
-    <li>OCR·메타데이터 파이프라인과 저장/조회 API를 통해 교재 제작 자동화</li>
-  </ul>
-  <p><b>역할</b>: 프롬프트 최적화, DB 구조 설계/구현, 저장·생성 API 개발<br>
-    <b>Tech</b>: Spring Boot · PostgreSQL · Tesseract · OpenAI<br>
-    <b>Link</b>: <a
-      href="https://github.com/orgs/semitation/repositories">https://github.com/orgs/semitation/repositories</a>
-  </p>
+  <h2 id="featured">🚀 대표 프로젝트</h2>
+  <div class="featured-projects">
+    <div class="featured-card" id="thezoo">
+      <a class="project-link" href="#thezoo">바로가기</a>
+      <h3>🎮 The Zoo — 소셜 디덕션 멀티플레이 게임</h3>
+      <ul>
+        <li>Unity 6 + Netcode for GameObjects 기반 분산 권한 토폴로지 적용</li>
+        <li>ML-Agents를 활용한 AI NPC 적용</li>
+      </ul>
+      <p>
+        <b>Tech</b>: Unity · Netcode for GameObjects · ML-Agents<br>
+        <b>Link</b>: <a href="https://github.com/mjmj1/The-Zoo" target="_blank">GitHub 바로가기</a>
+      </p>
+    </div>
+    <div class="featured-card" id="readingbridge">
+      <a class="project-link" href="#readingbridge">바로가기</a>
+      <h3>📚 리딩 브릿지 — 생성형 AI 난독증 아동 교재 생성 서비스</h3>
+      <ul>
+        <li>생성형 AI로 학습 난이도·문장 구조를 조절한 맞춤형 교재 생성</li>
+        <li>OCR·메타데이터 파이프라인과 저장/조회 API를 통해 교재 제작 자동화</li>
+      </ul>
+      <p>
+        <b>역할</b>: 프롬프트 최적화, DB 구조 설계/구현, 저장·생성 API 개발<br>
+        <b>Tech</b>: Spring Boot · PostgreSQL · Tesseract · OpenAI<br>
+        <b>Link</b>: <a href="https://github.com/orgs/semitation/repositories" target="_blank">GitHub 바로가기</a>
+      </p>
+    </div>
+  </div>
 
   <hr>
 
   <h1>📜 프로젝트</h1>
   <h2>Unity</h2>
 
-  <h3>ML-Agents를 이용한 자율주행 시스템</h3>
-  <p>
-    <b>기간:</b> 2023.06 ~ 2023.11 (6개월)<br>
-    <b>인원:</b> 6명<br>
-    <b>역할:</b> 팀장
-  </p>
-  <p>유니티에서 제공하는 강화학습 라이브러리인 ML-Agents를 활용해서 자율주행 시스템을 만들고 이를 실제 물체에 적용시켜 보겠다는 기획으로 진행했습니다.</br>
-    Unity와 ML-Agents 라이브러리 모두 처음 사용해서 만족스러운 결과를 내지 못했습니다.</p>
+  <div class="project-box">
+    <h3>ML-Agents를 이용한 자율주행 시스템</h3>
+    <p>
+      <b>기간:</b> 2023.06 ~ 2023.11 (6개월)<br>
+      <b>인원:</b> 6명<br>
+      <b>역할:</b> 팀장
+    </p>
+    <p>유니티에서 제공하는 강화학습 라이브러리인 ML-Agents를 활용해서 자율주행 시스템을 만들고 이를 실제 물체에 적용시켜 보겠다는 기획으로 진행했습니다.<br>
+      Unity와 ML-Agents 라이브러리 모두 처음 사용해서 만족스러운 결과를 내지 못했습니다.
+    </p>
+    <h4>맡은 업무</h4>
+    <ul>
+      <li>ML-Agents 학습 환경 구성</li>
+      <li>Agents 학습 시나리오 구현</li>
+      <li>C++ OpenCV 차선 인식 코드를 C#으로 포팅</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <h5>입력 데이터</h5>
+    <ul>
+      <li>
+        <img src="assets/portfolio/그림2.png" width="250" height="250">
+        ➡️
+        <img src="assets/portfolio/그림1.png" width="250" height="250">
+      </li>
+      <li>Opencvsharp 라이브러리를 이용하여 가상 환경의 차선을 인식한 이미지를 텍스쳐로 담아두고 Agents는 이 이미지를 이용해서 학습함</li>
+      <li>실제 환경에서 적용하는 것을 염두해두고, 단순 카메라만 이용해서 자율주행을 시도하기 위해서 현 상태로 설계를 하게 됨</li>
+    </ul>
+    <ul>
+      <li><img src="assets/portfolio/그림3.png" width="600"></li>
+      <li>실시간으로 차선 인식 이미지를 카메라 센서 데이터로 사용</li>
+      <li>차선을 넘게 되면 EndEpisode() 라는 함수가 호출되어 패널티를 받고 학습을 종료하도록 환경을 구성</li>
+    </ul>
+    <ul>
+      <li><img src="assets/portfolio/그림4.png" width="600"></li>
+      <li>차선을 체크하는 콜라이더가 없는 단순한 차선과 Agent만 있는 환경을 만들어서 적용시켰을 때, 실제로 움직이는 것을 확인함</li>
+      <li>하지만 차선을 벗어나게 되면 복귀하는 것을 학습하지 못해서 전체적인 퀄리티가 떨어졌음</li>
+      <li>개발 역량, 지식, AI 학습량이 부족하여 만족스러운 결과가 나오지 않음</li>
+    </ul>
+  </div>
 
-  <h4>맡은 업무</h4>
-  <ul>
-    <li>ML-Agents 학습 환경 구성</li>
-    <li>Agents 학습 시나리오 구현</li>
-    <li>C++ OpenCV 차선 인식 코드를 C#으로 포팅</li>
-  </ul>
+  <div class="project-box" id="thezoo">
+    <h3>ML-Agent + Netcode for GameObjects를 이용한 숨바꼭질 게임 : The Zoo</h3>
+    <p>
+      <b>기간:</b> 2025.03 ~ 2025.11 예정<br>
+      <b>인원:</b> 2명<br>
+      <b>역할:</b> 팀장<br>
+      <b>GitHub:</b> <a href="https://github.com/mjmj1/The-Zoo">The Zoo</a>
+    </p>
+    <p>AI NPC 사이에서 진짜 플레이어를 찾아내는 소셜 디덕션 멀티플레이 게임입니다.<br>
+      이전에 진행했던 자율주행 프로젝트 실패 경험을 바탕으로 새롭게 진행한 게임 프로젝트입니다.<br>
+      ML-Agents로 학습된 AI NPC 사이에서 진짜 플레이어를 찾는 숨바꼭질같은 게임으로 기획하였습니다.
+    </p>
+    <h4>맡은 업무</h4>
+    <ul>
+      <li>게임 기획 및 설계</li>
+      <li>NGO 기반 멀티플레이 환경 구성</li>
+      <li>플레이어 이동, 카메라, 세션 관리 구현</li>
+      <li>Seeker / Hider 역할 구현</li>
+      <li>AI NPC 학습 및 적용</li>
+      <li>사운드, UI 시스템 개발</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <h5>게임 흐름</h5>
+    <ul>
+      <li>플레이어 이름을 입력하고 접속하면 메인 메뉴에서 빠른 시작, Join Code, 세션 목록을 이용해서 접속할 수 있습니다.</li>
+      <li><img src="assets/portfolio/main.jpg" width="600"></li>
+      <li>접속 후엔 로비에서 플레이어들을 기다리고 모든 플레이어가 준비 버튼을 눌러 준비 완료가 되면 게임을 시작할 수 있습니다.</li>
+      <li><img src="assets/portfolio/lobby.jpg" width="600"></li>
+      <li>인게임에 들어가게 되면 하단의 링을 통해서 자신의 역할을 알 수 있고, AI NPC들이 생성됩니다.</li>
+      <li><img src="assets/portfolio/ingame.png" width="600"></li>
+    </ul>
+    <h5>상호작용</h5>
+    <ul>
+      <li>상호작용이 가능한 환경 요소 근처로 가서 바라본 뒤 F키를 누르면 상호작용이 가능하도록 구현했습니다.</li>
+      <li><img src="assets/portfolio/ingame2.png" width="600"></li>
+      <li>R키를 누르면 춤을 출 수 있습니다.</li>
+      <li><img src="assets/portfolio/spin.gif" width="600"></li>
+      <li>상호작용 중엔 열매를 떨어뜨려 먹을 수 있는 동작도 구현했습니다.</li>
+      <li><img src="assets/portfolio/inter.gif" width="600"></li>
+    </ul>
+    <h5>게임 결과</h5>
+    <ul>
+      <li>Seeker는 Hider를 찾아 제거해야 하고 모두 제거하게 되면 승리하게 됩니다.</li>
+      <li><img src="assets/portfolio/seeker_win.gif" width="600"></li>
+      <li>반대로 Hider는 5분 동안 들키지 않으면 승리하게 됩니다.</li>
+      <li><img src="assets/portfolio/hider_win.png" width="600"></li>
+    </ul>
+  </div>
 
-  <h4>프로젝트 내용</h4>
-  <h5>입력 데이터</h5>
-  <ul>
-    <li>
-      <img src="assets/portfolio/그림2.png" width="250" height="250">
-      ➡️
-      <img src="assets/portfolio/그림1.png" width="250" height="250">
-    </li>
-    <li>Opencvsharp 라이브러리를 이용하여 가상 환경의 차선을 인식한 이미지를 텍스쳐로 담아두고 Agents는 이 이미지를 이용해서 학습함</li>
-    <li>실제 환경에서 적용하는 것을 염두해두고, 단순 카메라만 이용해서 자율주행을 시도하기 위해서 현 상태로 설계를 하게 됨</li>
-  </ul>
-  <ul>
-    <li><img src="assets/portfolio/그림3.png" width="600"></li>
-    <li>실시간으로 차선 인식 이미지를 카메라 센서 데이터로 사용</li>
-    <li>차선을 넘게 되면 EndEpisode() 라는 함수가 호출되어 패널티를 받고 학습을 종료하도록 환경을 구성</li>
-  </ul>
+  <div class="project-box">
+    <h3>2025 InD GameJam : Throw it</h3>
+    <p>
+      <b>기간:</b> 2025.07.11 ~ 2025.07.13<br>
+      <b>인원:</b> 4명<br>
+      <b>역할:</b> 기획 및 개발
+    </p>
+    <p>
+      ‘빵’을 주제로 한 InD 게임잼 참가작으로, 던져서 만드는 빵 배달 게임입니다.<br>
+      디자이너와 기획자 없이 개발자만으로 진행했습니다.
+    </p>
+    <h4>맡은 업무</h4>
+    <ul>
+      <li>게임 기획 및 설계</li>
+      <li>게임 루프 구현</li>
+      <li>상호작용(당기기, 던지기, 튕기기 등) 구현</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <ul>
+      <li><img src="assets/portfolio/InD_image_0.png" width="600"></li>
+      <li><img src="assets/portfolio/InD_image_1.gif" width="600"></li>
+      <li><img src="assets/portfolio/InD_image_2.gif" width="600"></li>
+    </ul>
+  </div>
 
-  <ul>
-    <li><img src="assets/portfolio/그림4.png" width="600"></li>
-    <li>차선을 체크하는 콜라이더가 없는 단순한 차선과 Agent만 있는 환경을 만들어서 적용시켰을 때, 실제로 움직이는 것을 확인함</li>
-    <li>하지만 차선을 벗어나게 되면 복귀하는 것을 학습하지 못해서 전체적인 퀄리티가 떨어졌음</li>
-    <li>개발 역량, 지식, AI 학습량이 부족하여 만족스러운 결과가 나오지 않음</li>
-  </ul>
-
-  <hr>
-  <h3>ML-Agent + Netcode for GameObjects를 이용한 숨바꼭질 게임 : The Zoo</h3>
-  <p>
-    <b>기간:</b> 2025.03 ~ 2025.11 예정<br>
-    <b>인원:</b> 2명<br>
-    <b>역할:</b> 팀장<br>
-    <b>GitHub:</b> <a href="https://github.com/mjmj1/The-Zoo">The Zoo</a>
-  </p>
-  <p>AI NPC 사이에서 진짜 플레이어를 찾아내는 소셜 디덕션 멀티플레이 게임입니다.</br>
-    이전에 진행했던 자율주행 프로젝트 실패 경험을 바탕으로 새롭게 진행한 게임 프로젝트입니다.</br>
-    ML-Agents로 학습된 AI NPC 사이에서 진짜 플레이어를 찾는 숨바꼭질같은 게임으로 기획하였습니다.</p>
-
-  <h4>맡은 업무</h4>
-  <ul>
-    <li>게임 기획 및 설계</li>
-    <li>NGO 기반 멀티플레이 환경 구성</li>
-    <li>플레이어 이동, 카메라, 세션 관리 구현</li>
-    <li>Seeker / Hider 역할 구현</li>
-    <li>AI NPC 학습 및 적용</li>
-    <li>사운드, UI 시스템 개발</li>
-  </ul>
-
-  <h4>프로젝트 내용</h4>
-  <h5>게임 흐름</h5>
-  <ul>
-    <li>플레이어 이름을 입력하고 접속하면 메인 메뉴에서 빠른 시작, Join Code, 세션 목록을 이용해서 접속할 수 있습니다.</li>
-    <li><img src="assets/portfolio/main.jpg" width="600"></li>
-    <li>접속 후엔 로비에서 플레이어들을 기다리고 모든 플레이어가 준비 버튼을 눌러 준비 완료가 되면 게임을 시작할 수 있습니다.</li>
-    <li><img src="assets/portfolio/lobby.jpg" width="600"></li>
-    <li>인게임에 들어가게 되면 하단의 링을 통해서 자신의 역할을 알 수 있고, AI NPC들이 생성됩니다.</li>
-    <li><img src="assets/portfolio/ingame.png" width="600"></li>
-  </ul>
-  <h5>상호작용</h5>
-  <ul>
-    <li>상호작용이 가능한 환경 요소 근처로 가서 바라본 뒤 F키를 누르면 상호작용이 가능하도록 구현했습니다.</li>
-    <li><img src="assets/portfolio/ingame2.png" width="600"></li>
-    <li>R키를 누르면 춤을 출 수 있습니다.</li>
-    <li><img src="assets/portfolio/spin.gif" width="600"></li>
-    <li>상호작용 중엔 열매를 떨어뜨려 먹을 수 있는 동작도 구현했습니다.</li>
-    <li><img src="assets/portfolio/inter.gif" width="600"></li>
-  </ul>
-  <h5>게임 결과</h5>
-  <ul>
-    <li>Seeker는 Hider를 찾아 제거해야 하고 모두 제거하게 되면 승리하게 됩니다.</li>
-    <li><img src="assets/portfolio/seeker_win.gif" width="600"></li>
-    <li>반대로 Hider는 5분 동안 들키지 않으면 승리하게 됩니다.</li>
-    <li><img src="assets/portfolio/hider_win.png" width="600"></li>
-  </ul>
-
-  <hr>
-  <h3>2025 InD GameJam : Throw it</h3>
-  <p>
-    <b>기간:</b> 2025.07.11 ~ 2025.07.13<br>
-    <b>인원:</b> 4명<br>
-    <b>역할:</b> 기획 및 개발
-  </p>
-  <p>
-    ‘빵’을 주제로 한 InD 게임잼 참가작으로, 던져서 만드는 빵 배달 게임입니다.</br>
-    디자이너와 기획자 없이 개발자만으로 진행했습니다.
-  </p>
-
-  <h4>맡은 업무</h4>
-  <ul>
-    <li>게임 기획 및 설계</li>
-    <li>게임 루프 구현</li>
-    <li>상호작용(당기기, 던지기, 튕기기 등) 구현</li>
-  </ul>
-
-  <h4>프로젝트 내용</h4>
-  <ul>
-    <li><img src="assets/portfolio/InD_image_0.png" width="600"></li>
-    <li><img src="assets/portfolio/InD_image_1.gif" width="600"></li>
-    <li><img src="assets/portfolio/InD_image_2.gif" width="600"></li>
-  </ul>
-
-  <hr>
-  <h3>2025 게임마당 GameJam : WALL</h3>
-  <p>
-    <b>기간:</b> 2025.09.05 ~ 2025.09.07<br>
-    <b>인원:</b> 4명<br>
-    <b>역할:</b> 개발
-  </p>
-  <p>
-    게임마당 에서 개최한 게임잼에서 개발한 게임입니다. 기획 1 + 아트 1 + 개발 2 으로 팀이 구성되었습니다.</br>
-    “종말”을 주제로 한 퍼즐 액션 게임. 파쿠르, 로프, 사다리 등 다양한 액션 구현했습니다.
-  </p>
-
-  <h4>맡은 업무</h4>
-  <ul>
-    <li>플레이어 기본 조작 / 몬스터 이동 구현</li>
-    <li>파쿠르 액션 구현</li>
-    <li>사다리 오르내리기 구현</li>
-    <li>로프 오르내리기/반동 구현</li>
-    <li>엘레베이터 구현</li>
-    <li>스프라이트 애니메이션 적용</li>
-    <li>유니티 엔진 관련 트러블 슈팅</li>
-  </ul>
-
-  <h4>프로젝트 내용</h4>
-  <h5>메인 화면</h5>
-  <ul>
-    <li><img src="assets/portfolio/Wall_0.png" width="600"></li>
-  </ul>
-  <h5>게임 플레이</h5>
-  <ul>
-    <li><img src="assets/portfolio/Wall_1.png" width="600"></li>
-    <li><img src="assets/portfolio/Wall_2.png" width="600"></li>
-  </ul>
+  <div class="project-box">
+    <h3>2025 게임마당 GameJam : WALL</h3>
+    <p>
+      <b>기간:</b> 2025.09.05 ~ 2025.09.07<br>
+      <b>인원:</b> 4명<br>
+      <b>역할:</b> 개발
+    </p>
+    <p>
+      게임마당 에서 개최한 게임잼에서 개발한 게임입니다. 기획 1 + 아트 1 + 개발 2 으로 팀이 구성되었습니다.<br>
+      “종말”을 주제로 한 퍼즐 액션 게임. 파쿠르, 로프, 사다리 등 다양한 액션 구현했습니다.
+    </p>
+    <h4>맡은 업무</h4>
+    <ul>
+      <li>플레이어 기본 조작 / 몬스터 이동 구현</li>
+      <li>파쿠르 액션 구현</li>
+      <li>사다리 오르내리기 구현</li>
+      <li>로프 오르내리기/반동 구현</li>
+      <li>엘레베이터 구현</li>
+      <li>스프라이트 애니메이션 적용</li>
+      <li>유니티 엔진 관련 트러블 슈팅</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <h5>메인 화면</h5>
+    <ul>
+      <li><img src="assets/portfolio/Wall_0.png" width="600"></li>
+    </ul>
+    <h5>게임 플레이</h5>
+    <ul>
+      <li><img src="assets/portfolio/Wall_1.png" width="600"></li>
+      <li><img src="assets/portfolio/Wall_2.png" width="600"></li>
+    </ul>
+  </div>
 
   <hr>
   <h2>Web</h2>
-  <h3>말레이시아 해외 인턴십 프로젝트</h3>
-  <p>
-    <b>기간:</b> 2025.02.16 ~ 2025.03.02<br>
-    <b>인원:</b> 6명<br>
-    <b>역할:</b> 팀장<br>
-    <b>GitHub:</b> <a href="https://github.com/mjmj1/UCSI_Subject_Team1">UCSI_Subject_Team1</a>
-  </p>
-  <p>UCSI 대학의 강의실 중복 문제를 AI로 해결하는 Django 기반 프로젝트</p>
 
-  <h4>맡은 업무</h4>
-  <ul>
-    <li>말레이시아 PM과 소통</li>
-    <li>Django 서버 구축</li>
-    <li>RDB 설계 및 구축</li>
-    <li>API 설계 및 구현</li>
-    <li>데이터 정제 알고리즘 설계</li>
-  </ul>
+  <div class="project-box">
+    <h3>말레이시아 해외 인턴십 프로젝트</h3>
+    <p>
+      <b>기간:</b> 2025.02.16 ~ 2025.03.02<br>
+      <b>인원:</b> 6명<br>
+      <b>역할:</b> 팀장<br>
+      <b>GitHub:</b> <a href="https://github.com/mjmj1/UCSI_Subject_Team1">UCSI_Subject_Team1</a>
+    </p>
+    <p>UCSI 대학의 강의실 중복 문제를 AI로 해결하는 Django 기반 프로젝트</p>
+    <h4>맡은 업무</h4>
+    <ul>
+      <li>말레이시아 PM과 소통</li>
+      <li>Django 서버 구축</li>
+      <li>RDB 설계 및 구축</li>
+      <li>API 설계 및 구현</li>
+      <li>데이터 정제 알고리즘 설계</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <iframe src="assets/portfolio/Malaysia_team1_ppt.pdf" width="100%" height="600px" style="border:1px solid #ccc;">
+      이 브라우저는 PDF를 지원하지 않습니다. <a href="assets/portfolio/ucsi_project.pdf">여기에서 PDF를 다운로드하세요.</a>
+    </iframe>
+  </div>
 
-  <h4>프로젝트 내용</h4>
-  <iframe src="assets/portfolio/Malaysia_team1_ppt.pdf" width="100%" height="600px" style="border:1px solid #ccc;">
-    이 브라우저는 PDF를 지원하지 않습니다. <a href="assets/portfolio/ucsi_project.pdf">여기에서 PDF를 다운로드하세요.</a>
-  </iframe>
+  <div class="project-box">
+    <h3>AWS S3를 이용한 교내 파일 공유 서비스: 한밭박스</h3>
+    <p>
+      <b>기간:</b> 2024.10.07 ~ 2024.11.10<br>
+      <b>인원:</b> 3명<br>
+      <b>역할:</b> 백엔드<br>
+      <b>GitHub:</b> <a href="https://github.com/west-eastH/Hanbat-Box">Hanbat-Box Repository</a>
+    </p>
+    <p>
+      교내 경진 대회에 출품한 작품<br>
+      AWS S3 기반의 교내 파일 공유 서비스<br>
+      Spring Boot와 S3 통합으로 대용량 파일 처리 최적화
+    </p>
+    <h4>맡은 업무</h4>
+    <ul>
+      <li>Java Spring 백엔드 개발</li>
+      <li>AWS S3 인프라 구축 및 운영 관리</li>
+      <li>서버 애플리케이션과 S3 간 파일 통신 모듈 설계</li>
+      <li>대용량 파일 입출력 최적화</li>
+      <li>서버 파일 다운로드 기능 구현</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <iframe src="assets/portfolio/KCS팀_한밭박스_발표프레젠테이션.pdf" width="100%" height="600px" style="border:1px solid #ccc;">
+      이 브라우저는 PDF를 지원하지 않습니다. <a href="assets/portfolio/KCS팀_한밭박스_발표프레젠테이션.pdf">여기에서 PDF를 다운로드하세요.</a>
+    </iframe>
+  </div>
 
-  <h3>AWS S3를 이용한 교내 파일 공유 서비스: 한밭박스</h3>
-  <p>
-    <b>기간:</b> 2024.10.07 ~ 2024.11.10<br>
-    <b>인원:</b> 3명<br>
-    <b>역할:</b> 백엔드<br>
-    <b>GitHub:</b> <a href="https://github.com/west-eastH/Hanbat-Box">Hanbat-Box Repository</a>
-  </p>
-  <p>
-    교내 경진 대회에 출품한 작품<br>
-    AWS S3 기반의 교내 파일 공유 서비스<br>
-    Spring Boot와 S3 통합으로 대용량 파일 처리 최적화
-  </p>
+  <div class="project-box" id="readingbridge">
+    <h3>생성형 AI를 활용한 난독증 아동용 교재 생성 서비스: 리딩브릿지</h3>
+    <p>
+      <b>기간:</b> 2025.03 ~ 2025.07<br>
+      <b>인원:</b> 5명<br>
+      <b>역할:</b> 백엔드<br>
+      <b>GitHub:</b> <a href="https://github.com/orgs/semitation/repositories">리딩브릿지 Repository</a>
+    </p>
+    <p>
+      교내 경진 대회에 출품한 작품<br>
+      생성형 AI를 활용해 난독증 아동을 위한 교재를 자동 생성하는 서비스
+    </p>
+    <h4>맡은 업무</h4>
+    <ul>
+      <li>RDB 구조 설계</li>
+      <li>AI 프롬프트 최적화</li>
+      <li>OCR, PDF 파싱</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <iframe src="assets/portfolio/난독증_발표자료.pdf" width="100%" height="600px" style="border:1px solid #ccc;">
+      이 브라우저는 PDF를 지원하지 않습니다. <a href="assets/portfolio/난독증_발표자료.pdf">여기에서 PDF를 다운로드하세요.</a>
+    </iframe>
+  </div>
 
-  <h4>맡은 업무</h4>
-  <ul>
-    <li>Java Spring 백엔드 개발</li>
-    <li>AWS S3 인프라 구축 및 운영 관리</li>
-    <li>서버 애플리케이션과 S3 간 파일 통신 모듈 설계</li>
-    <li>대용량 파일 입출력 최적화</li>
-    <li>서버 파일 다운로드 기능 구현</li>
-  </ul>
-
-  <h4>프로젝트 내용</h4>
-  <iframe src="assets/portfolio/Malaysia_team1_ppt.pdf" width="100%" height="600px" style="border:1px solid #ccc;">
-    이 브라우저는 PDF를 지원하지 않습니다. <a href="assets/portfolio/KCS팀_한밭박스_발표프레젠테이션.pdf">여기에서 PDF를 다운로드하세요.</a>
-  </iframe>
-
-  <h3>생성형 AI를 활용한 난독증 아동용 교재 생성 서비스: 리딩브릿지</h3>
-  <p>
-    <b>기간:</b> 2025.03 ~ 2025.07<br>
-    <b>인원:</b> 5명<br>
-    <b>역할:</b> 백엔드<br>
-    <b>GitHub:</b> <a href="https://github.com/orgs/semitation/repositories">리딩브릿지 Repository</a>
-  </p>
-  <p>
-    교내 경진 대회에 출품한 작품<br>
-    생성형 AI를 활용해 난독증 아동을 위한 교재를 자동 생성하는 서비스
-  </p>
-
-  <h4>맡은 업무</h4>
-  <ul>
-    <li>RDB 구조 설계</li>
-    <li>AI 프롬프트 최적화</li>
-    <li>OCR, PDF 파싱</li>
-  </ul>
-
-  <h4>프로젝트 내용</h4>
-  <iframe src="assets/portfolio/Malaysia_team1_ppt.pdf" width="100%" height="600px" style="border:1px solid #ccc;">
-    이 브라우저는 PDF를 지원하지 않습니다. <a href="assets/portfolio/난독증_발표자료.pdf">여기에서 PDF를 다운로드하세요.</a>
-  </iframe>
-
-  <hr>
   <p style="text-align:center; color:#777;">© 2025 김만종 Portfolio</p>
 
   <style>
