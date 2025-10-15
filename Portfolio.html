@@ -44,7 +44,8 @@
 <p><b>개발 기간:</b> 2023.06 ~ 2023.11 (6개월)<br>
 <b>인원:</b> 6명<br>
 <b>역할:</b> 팀장</p>
-<p>유니티의 강화학습 라이브러리 ML-Agents를 활용하여 자율주행 시스템을 제작했습니다.</p>
+<p>유니티에서 제공하는 강화학습 라이브러리인 ML-Agents를 활용해서 자율주행 시스템을 만들고 이를 실제 물체에 적용시켜 보겠다는 기획으로 진행했습니다.</p>
+<p>Unity와 ML-Agents 라이브러리 모두 처음 사용해서 만족스러운 결과를 내지 못했습니다.</p>
 
 <h4>맡은 업무</h4>
 <ul>
@@ -55,13 +56,15 @@
 
 <h4>프로젝트 내용</h4>
 <p>
-  <img src="assets/portfolio/그림1.png" width="250">
-  <img src="assets/portfolio/그림2.png" width="250">
+  <img src="assets/portfolio/그림2.png" width="250" height="250">
+  ➡️➡️➡️
+  <img src="assets/portfolio/그림1.png" width="250" height="250"> 
 </p>
-<p>Opencvsharp 라이브러리를 통해 가상환경 차선을 인식한 이미지를 텍스처로 학습에 활용했습니다.</p>
+<li>Opencvsharp 라이브러리를 이용하여 가상 환경의 차선을 인식한 이미지를 텍스쳐로 담아두고 Agents는 이 이미지를 이용해서 학습함</li>
+<li>실제 환경에서 적용하는 것을 염두해두고, 단순 카메라만 이용해서 자율주행을 시도하기 위해서 현 상태로 설계를 하게 됨</li>
 
 <p><img src="assets/portfolio/그림3.png" width="600"></p>
-<p>실시간 카메라 센서 데이터를 이용해 차선을 벗어나면 <code>EndEpisode()</code> 호출로 패널티 부여.</p>
+<p>실시간 카메라 센서 데이터를 이용해 차선을 벗어나면 <code>EndEpisode()</code> 호출로 패널티 부여함</p>
 
 <p><img src="assets/portfolio/그림4.png" width="600"></p>
 <p>Agent가 기본 주행을 수행했으나 복귀 학습이 부족하여 퀄리티가 낮은 결과를 얻었습니다.</p>
