@@ -5,6 +5,9 @@
     <title>🐓</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
+      /* =========================================
+       1. 기본 스타일 (Light Mode Default)
+       ========================================= */
       html {
         line-height: 1.6;
         font-family: "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
@@ -64,65 +67,15 @@
         height: auto;
       }
 
-      @media (prefers-color-scheme: dark) {
-        html {
-          background: #1e1e1e;
-          color: #e0e0e0;
-        }
-
-        a {
-          color: #9cd9ff;
-        }
-
-        /* 제목 태그 색상 변경 (기존 #222은 어두워서 안 보임) */
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-          color: #f0f0f0;
-        }
-
-        /* 프로젝트 박스 다크모드 적용 */
-        .project-box {
-          background: #2d2d2d;
-          border-color: #444;
-          color: #e0e0e0;
-        }
-
-        /* 대표 프로젝트 카드 다크모드 적용 */
-        .featured-card {
-          background: #2d2d2d;
-          border-color: #444;
-          color: #e0e0e0;
-        }
-
-        /* 이력 테이블 다크모드 적용 */
-        .resume-table {
-          background: #2d2d2d;
-          color: #e0e0e0;
-        }
-        .resume-table thead {
-          background: #3d3d3d;
-        }
-        .resume-table th {
-          color: #fff;
-          border-bottom: 2px solid #555;
-        }
-        .resume-table tr {
-          border-bottom: 1px solid #444;
-        }
-        .resume-table tbody tr:hover {
-          background: #383838;
-        }
-      }
-
+      /* =========================================
+       2. 컴포넌트 스타일 (Project Box, Card, Table)
+       ========================================= */
       .project-box {
         border: 2px solid #e0e0e0;
         border-radius: 12px;
         padding: 24px 20px;
         margin: 32px 0;
-        background: #fafafa;
+        background: #fafafa; /* 기본 배경색 (흰색 계열) */
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
 
@@ -229,6 +182,79 @@
 
       .resume-table tbody tr:hover {
         background: #f1f5fb;
+      }
+
+      /* =========================================
+       3. 다크 모드 (Dark Mode Override)
+       * 반드시 맨 아래에 위치해야 위 설정을 덮어씌웁니다.
+       ========================================= */
+      @media (prefers-color-scheme: dark) {
+        html {
+          background: #1e1e1e;
+          color: #e0e0e0;
+        }
+
+        a {
+          color: #9cd9ff;
+        }
+
+        /* 제목 태그 색상 변경 */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+          color: #f0f0f0;
+        }
+
+        /* 프로젝트 박스 다크모드 적용 */
+        .project-box {
+          background: #2d2d2d;
+          border-color: #444;
+          color: #e0e0e0;
+        }
+
+        /* 대표 프로젝트 카드 다크모드 적용 */
+        .featured-card {
+          background: #2d2d2d;
+          border-color: #444;
+          color: #e0e0e0;
+        }
+
+        /* 이력 테이블 다크모드 적용 */
+        .resume-table {
+          background: #2d2d2d;
+          color: #e0e0e0;
+        }
+        .resume-table thead {
+          background: #3d3d3d;
+        }
+        .resume-table th {
+          color: #fff;
+          border-bottom: 2px solid #555;
+        }
+        .resume-table tr {
+          border-bottom: 1px solid #444;
+        }
+        .resume-table tbody tr:hover {
+          background: #383838;
+        }
+
+        /* 아이콘 반전 (Github 로고 등 검은색 아이콘을 흰색으로) */
+        img.icon-invert {
+          filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(1.05);
+        }
+
+        /* 인용구 및 코드블록 */
+        blockquote {
+          border-left-color: #555;
+          color: #aaa;
+        }
+        pre,
+        code {
+          background: #333;
+          color: #eee;
+        }
       }
     </style>
   </head>
