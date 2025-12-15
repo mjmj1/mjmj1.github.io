@@ -384,45 +384,68 @@
       <b>역할:</b> 팀장<br>
       <b>GitHub:</b> <a href="https://github.com/mjmj1/The-Zoo">The Zoo</a>
     </p>
+    <img src="assets/portfolio/TheZoo/TheZoo_Poster.png" width="600">
     <p>AI NPC 사이에서 진짜 플레이어를 찾아내는 소셜 디덕션 멀티플레이 게임입니다.<br>
       이전에 진행했던 자율주행 프로젝트 실패 경험을 바탕으로 새롭게 진행한 게임 프로젝트입니다.<br>
-      ML-Agents로 학습된 AI NPC 사이에서 진짜 플레이어를 찾는 숨바꼭질같은 게임으로 기획하였습니다.
+      ML-Agents로 학습된 AI NPC 사이에서 진짜 플레이어를 찾는 숨바꼭질같은 게임으로 기획하였습니다.<br>
+      게임 모드는 총 2가지로 Hide & Seek 모드, Last Man Standing 모드가 있습니다.
     </p>
     <h4>맡은 업무</h4>
     <ul>
       <li>게임 기획 및 설계</li>
-      <li>NGO 기반 멀티플레이 환경 구성</li>
-      <li>플레이어 이동, 카메라, 세션 관리 구현</li>
-      <li>Seeker / Hider 역할 구현</li>
-      <li>AI NPC 학습 및 적용</li>
+      <li>Netcode for Gameobjects(NGO)를 이용한 네트워크 환경 구성</li>
+      <li>세션 생성, 접속, 퇴장 등 NGO를 이용한 멀티플레이 환경 구현</li>
+      <li>Seeker와 Hider 역할 시스템 구현 (공격 및 피격 등)</li>
+      <li>ML-Agents를 이용한 학습 환경 구현 및 학습, 학습된 모델을 적용할 AI NPC 구현</li>
       <li>사운드, UI 시스템 개발</li>
+      <li>반복 이벤트 시스템 구현</li>
     </ul>
     <h4>프로젝트 내용</h4>
-    <h5>게임 흐름</h5>
-    <ul>
-      <li>플레이어 이름을 입력하고 접속하면 메인 메뉴에서 빠른 시작, Join Code, 세션 목록을 이용해서 접속할 수 있습니다.</li>
-      <li><img src="assets/portfolio/main.jpg" width="600"></li>
-      <li>접속 후엔 로비에서 플레이어들을 기다리고 모든 플레이어가 준비 버튼을 눌러 준비 완료가 되면 게임을 시작할 수 있습니다.</li>
-      <li><img src="assets/portfolio/lobby.jpg" width="600"></li>
-      <li>인게임에 들어가게 되면 하단의 링을 통해서 자신의 역할을 알 수 있고, AI NPC들이 생성됩니다.</li>
-      <li><img src="assets/portfolio/ingame.png" width="600"></li>
-    </ul>
-    <h5>상호작용</h5>
-    <ul>
-      <li>상호작용이 가능한 환경 요소 근처로 가서 바라본 뒤 F키를 누르면 상호작용이 가능하도록 구현했습니다.</li>
-      <li><img src="assets/portfolio/ingame2.png" width="600"></li>
-      <li>R키를 누르면 춤을 출 수 있습니다.</li>
-      <li><img src="assets/portfolio/spin.gif" width="600"></li>
-      <li>상호작용 중엔 열매를 떨어뜨려 먹을 수 있는 동작도 구현했습니다.</li>
-      <li><img src="assets/portfolio/inter.gif" width="600"></li>
-    </ul>
-    <h5>게임 결과</h5>
-    <ul>
-      <li>Seeker는 Hider를 찾아 제거해야 하고 모두 제거하게 되면 승리하게 됩니다.</li>
-      <li><img src="assets/portfolio/seeker_win.gif" width="600"></li>
-      <li>반대로 Hider는 5분 동안 들키지 않으면 승리하게 됩니다.</li>
-      <li><img src="assets/portfolio/hider_win.png" width="600"></li>
-    </ul>
+    <h5>인게임 이미지</h5>
+<ul>
+    <li>타이틀 화면</li>
+    <li><img src="assets/portfolio/TheZoo/Title.png" width="600" alt="타이틀 화면"></li>
+    <li>로비</li>
+    <li><img src="assets/portfolio/TheZoo/Lobby.png" width="600" alt="로비"></li>
+    <li>게임 설정</li>
+    <li><img src="assets/portfolio/TheZoo/GameSetting.png" width="600" alt="게임 설정"></li>
+    <li>인게임 화면</li>
+    <li><img src="assets/portfolio/TheZoo/InGame.png" width="600" alt="인게임 화면"></li>
+</ul>
+
+<h5>액션</h5>
+<ul>
+    <li>대쉬, 공격(상호작용), 회전, 점프를 구현함</li>
+    <li>상호작용</li>
+    <li><img src="assets/portfolio/TheZoo/Interaction.png" width="600" alt="상호작용"></li>
+    <li>회전</li>
+    <li><img src="assets/portfolio/TheZoo/Spin.gif" width="600" alt="회전"></li>
+</ul>
+
+<h5>반복 이벤트 시스템</h5>
+<ul>
+    <li>Hider는 주기적으로 미션을 수행해야 함</li>
+    <li><img src="assets/portfolio/TheZoo/Mission.png" width="600" alt="미션"></li>
+    <li>미션을 성공 or 실패에 따라 버프 및 디버프 제거 or 디버프를 얻음</li>
+    <li>버프</li>
+    <li><img src="assets/portfolio/TheZoo/Buff.gif" width="600" alt="버프"></li>
+    <li>디버프 제거</li>
+    <li><img src="assets/portfolio/TheZoo/DebuffDelete.gif" width="600" alt="디버프 제거"></li>
+    <li>디버프</li>
+    <li><img src="assets/portfolio/TheZoo/Debuff.gif" width="600" alt="디버프"></li>
+    <li>주기적으로 태풍이 발생함</li>
+    <li><img src="assets/portfolio/TheZoo/Tornado.png" width="600" alt="태풍"></li>
+    <li>발생한 태풍에 맞으면 5초 간 기절 및 넉백</li>
+    <li><img src="assets/portfolio/TheZoo/TornadoHit.gif" width="600" alt="태풍 피격"></li>
+</ul>
+
+<h5>게임 결과</h5>
+<ul>
+    <li>Seeker는 Hider를 찾아 제거해야 하고 모두 제거하게 되면 승리</li>
+    <li><img src="assets/portfolio/TheZoo/SeekerWin.gif" width="600" alt="Seeker 승리"></li>
+    <li>Hider는 5분(설정 가능) 동안 살아남으면 승리</li>
+    <li><img src="assets/portfolio/TheZoo/HiderWin.png" width="600" alt="Hider 승리"></li>
+</ul>
   </div>
 
   <div class="project-box">
