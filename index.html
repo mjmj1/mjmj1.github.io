@@ -1,1182 +1,890 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <title>🐓</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      /* =========================================
+
+<head>
+  <meta charset="utf-8" />
+  <title>🐓</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    /* =========================================
        1. 기본 스타일 (Light Mode Default)
        ========================================= */
-      html {
-        line-height: 1.6;
-        font-family: "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
-        font-size: 18px;
-        color: #1a1a1a;
-        background-color: #fafafa;
-      }
-  <head>
-    <meta charset="utf-8" />
-    <title>🐓</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>
-      /* =========================================
-       1. 기본 스타일 (Light Mode Default)
+    html {
+      line-height: 1.6;
+      font-family: "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+      font-size: 18px;
+      color: #1a1a1a;
+      background-color: #fafafa;
+    }
+
+    body {
+      margin: 0 auto;
+      max-width: 900px;
+      padding: 40px 20px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      color: #222;
+    }
+
+    a {
+      color: #0366d6;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #ddd;
+      margin: 2em 0;
+    }
+
+    p {
+      line-height: 1.7;
+    }
+
+    pre,
+    code {
+      background: #f4f4f4;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    blockquote {
+      border-left: 4px solid #ccc;
+      padding-left: 1em;
+      color: #666;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* =========================================
+       2. 컴포넌트 스타일 (Project Box, Card, Table)
        ========================================= */
+    .project-box {
+      border: 2px solid #e0e0e0;
+      border-radius: 12px;
+      padding: 24px 20px;
+      margin: 32px 0;
+      background: #fafafa;
+      /* 기본 배경색 (흰색 계열) */
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .project-box h3 {
+      margin-top: 0;
+      margin-bottom: 12px;
+    }
+
+    .project-box p,
+    .project-box ul,
+    .project-box iframe,
+    .project-box h4,
+    .project-box h5 {
+      margin-bottom: 10px;
+    }
+
+    .featured-projects {
+      display: flex;
+      gap: 24px;
+      margin: 32px 0;
+      flex-wrap: wrap;
+    }
+
+    .featured-card {
+      flex: 1 1 320px;
+      background: #fff;
+      border: 2px solid #e0e0e0;
+      border-radius: 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      padding: 28px 22px 56px 22px;
+      transition: box-shadow 0.2s;
+      position: relative;
+      min-width: 320px;
+    }
+
+    .featured-card:hover {
+      box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+      border-color: #b3d1ff;
+    }
+
+    .featured-card h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 1.25em;
+    }
+
+    .featured-card p,
+    .featured-card ul {
+      margin-bottom: 10px;
+    }
+
+    .featured-card .project-link {
+      position: absolute;
+      right: 22px;
+      bottom: 18px;
+      background: #0366d6;
+      color: #fff;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.95em;
+      text-decoration: none;
+      transition: background 0.2s;
+      z-index: 2;
+    }
+
+    .featured-card .project-link:hover {
+      background: #024eaa;
+    }
+
+    .resume-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 24px 0;
+      font-size: 1em;
+      background: #f8fafc;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .resume-table th,
+    .resume-table td {
+      padding: 14px 12px;
+      text-align: left;
+    }
+
+    .resume-table thead {
+      background: #e3eaf5;
+    }
+
+    .resume-table th {
+      font-weight: 600;
+      color: #2d3a4a;
+      border-bottom: 2px solid #d1d5db;
+    }
+
+    .resume-table tr {
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .resume-table tr:last-child {
+      border-bottom: none;
+    }
+
+    .resume-table tbody tr:hover {
+      background: #f1f5fb;
+    }
+
+    /* =========================================
+       3. 다크 모드 (Dark Mode Override)
+       * 반드시 맨 아래에 위치해야 위 설정을 덮어씌웁니다.
+       ========================================= */
+    @media (prefers-color-scheme: dark) {
       html {
-        line-height: 1.6;
-        font-family: "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
-        font-size: 18px;
-        color: #1a1a1a;
-        background-color: #fafafa;
+        background: #1e1e1e;
+        color: #e0e0e0;
       }
 
-      body {
-        margin: 0 auto;
-        max-width: 900px;
-        padding: 40px 20px;
-      }
-      body {
-        margin: 0 auto;
-        max-width: 900px;
-        padding: 40px 20px;
+      a {
+        color: #9cd9ff;
       }
 
+      /* 제목 태그 색상 변경 */
       h1,
       h2,
       h3,
       h4,
       h5 {
-        color: #222;
-      }
-      h1,
-      h2,
-      h3,
-      h4,
-      h5 {
-        color: #222;
+        color: #f0f0f0;
       }
 
-      a {
-        color: #0366d6;
-        text-decoration: none;
-      }
-      a {
-        color: #0366d6;
-        text-decoration: none;
+      /* 프로젝트 박스 다크모드 적용 */
+      .project-box {
+        background: #2d2d2d;
+        border-color: #444;
+        color: #e0e0e0;
       }
 
-      a:hover {
-        text-decoration: underline;
-      }
-      a:hover {
-        text-decoration: underline;
-      }
-
-      hr {
-        border: none;
-        border-top: 1px solid #ddd;
-        margin: 2em 0;
-      }
-      hr {
-        border: none;
-        border-top: 1px solid #ddd;
-        margin: 2em 0;
+      /* 대표 프로젝트 카드 다크모드 적용 */
+      .featured-card {
+        background: #2d2d2d;
+        border-color: #444;
+        color: #e0e0e0;
       }
 
-      p {
-        line-height: 1.7;
+      /* 이력 테이블 다크모드 적용 */
+      .resume-table {
+        background: #2d2d2d;
+        color: #e0e0e0;
       }
-      p {
-        line-height: 1.7;
+
+      .resume-table thead {
+        background: #3d3d3d;
+      }
+
+      .resume-table th {
+        color: #fff;
+        border-bottom: 2px solid #555;
+      }
+
+      .resume-table tr {
+        border-bottom: 1px solid #444;
+      }
+
+      .resume-table tbody tr:hover {
+        background: #383838;
+      }
+
+      /* 아이콘 반전 (Github 로고 등 검은색 아이콘을 흰색으로) */
+      img.icon-invert {
+        filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(1.05);
+      }
+
+      /* 인용구 및 코드블록 */
+      blockquote {
+        border-left-color: #555;
+        color: #aaa;
       }
 
       pre,
       code {
-        background: #f4f4f4;
-        padding: 2px 4px;
-        border-radius: 4px;
+        background: #333;
+        color: #eee;
       }
-      pre,
-      code {
-        background: #f4f4f4;
-        padding: 2px 4px;
-        border-radius: 4px;
-      }
+    }
+  </style>
+</head>
 
-      blockquote {
-        border-left: 4px solid #ccc;
-        padding-left: 1em;
-        color: #666;
-      }
-      blockquote {
-        border-left: 4px solid #ccc;
-        padding-left: 1em;
-        color: #666;
-      }
+<body>
+  <h1>김만종 | Game & Backend Developer</h1>
 
-      img {
-        max-width: 100%;
-        height: auto;
-      }
-      img {
-        max-width: 100%;
-        height: auto;
-      }
+  <p>
+    <b>멀티플레이 게임과 AI 시스템을 중심으로 개발하는 게임 개발자</b>입니다.<br>
+    Unity 기반 분산 권한 멀티플레이 구조와 ML-Agents를 활용한 AI NPC 설계에 강점을 가지고 있으며,<br>
+    현재는 소셜 디덕션 장르 게임 <a href="https://github.com/mjmj1/The-Zoo" target="_blank"><b>The Zoo</b></a>를 중심으로 프로젝트를 발전시키고
+    있습니다.
+  </p>
 
-      /* =========================================
-       2. 컴포넌트 스타일 (Project Box, Card, Table)
-       ========================================= */
-      .project-box {
-        border: 2px solid #e0e0e0;
-        border-radius: 12px;
-        padding: 24px 20px;
-        margin: 32px 0;
-        background: #fafafa; /* 기본 배경색 (흰색 계열) */
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      }
-      /* =========================================
-       2. 컴포넌트 스타일 (Project Box, Card, Table)
-       ========================================= */
-      .project-box {
-        border: 2px solid #e0e0e0;
-        border-radius: 12px;
-        padding: 24px 20px;
-        margin: 32px 0;
-        background: #fafafa; /* 기본 배경색 (흰색 계열) */
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      }
+  <p>
+    <sub>관심 분야: Unity · Netcode for GameObjects · ML-Agents · Game Backend</sub>
+  </p>
 
-      .project-box h3 {
-        margin-top: 0;
-        margin-bottom: 12px;
-      }
-      .project-box h3 {
-        margin-top: 0;
-        margin-bottom: 12px;
-      }
+  <hr />
 
-      .project-box p,
-      .project-box ul,
-      .project-box iframe,
-      .project-box h4,
-      .project-box h5 {
-        margin-bottom: 10px;
-      }
-      .project-box p,
-      .project-box ul,
-      .project-box iframe,
-      .project-box h4,
-      .project-box h5 {
-        margin-bottom: 10px;
-      }
+  <h2>🏢 이력</h2>
+  <table class="resume-table">
+    <thead>
+      <tr>
+        <th>기간</th>
+        <th>이름</th>
+        <th>내용</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>2024.05.22 ~ 2025.03.01</td>
+        <td>비엔에프테크놀로지(주)</td>
+        <td>
+          원자력 발전소 모니터링·조작 소프트웨어 개발<br>
+          <sub>운영 SW 유지보수, 테스트 자동화 매크로 개발, SRS/SDD 문서 작성</sub>
+        </td>
 
-      .featured-projects {
-        display: flex;
-        gap: 24px;
-        margin: 32px 0;
-        flex-wrap: wrap;
-      }
-      .featured-projects {
-        display: flex;
-        gap: 24px;
-        margin: 32px 0;
-        flex-wrap: wrap;
-      }
+      </tr>
+      <tr>
+        <td>2025.06.31 ~ 2025.08.20</td>
+        <td>아이와즈 인턴쉽</td>
+        <td>
+          AI 기반 엣지 디바이스 얼굴 인식 프로젝트<br>
+          <sub>Jetson Nano 환경, ONNX/TensorRT 추론 파이프라인 구축</sub>
+        </td>
 
-      .featured-card {
-        flex: 1 1 320px;
-        background: #fff;
-        border: 2px solid #e0e0e0;
-        border-radius: 16px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        padding: 28px 22px 56px 22px;
-        transition: box-shadow 0.2s;
-        position: relative;
-        min-width: 320px;
-      }
-      .featured-card {
-        flex: 1 1 320px;
-        background: #fff;
-        border: 2px solid #e0e0e0;
-        border-radius: 16px;
-        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-        padding: 28px 22px 56px 22px;
-        transition: box-shadow 0.2s;
-        position: relative;
-        min-width: 320px;
-      }
+      </tr>
+    </tbody>
+  </table>
 
-      .featured-card:hover {
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-        border-color: #b3d1ff;
-      }
-      .featured-card:hover {
-        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
-        border-color: #b3d1ff;
-      }
+  <h2>📎 Contect</h2>
+  <ul>
+    <li>💻 <a href="https://github.com/mjmj1">GitHub</a></li>
+    <li>📫 <a href="mailto:mjong3365@gmail.com">mjong3365@gmail.com</a></li>
+  </ul>
 
-      .featured-card h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-size: 1.25em;
-      }
-      .featured-card h3 {
-        margin-top: 0;
-        margin-bottom: 10px;
-        font-size: 1.25em;
-      }
+  <hr />
 
-      .featured-card p,
-      .featured-card ul {
-        margin-bottom: 10px;
-      }
-      .featured-card p,
-      .featured-card ul {
-        margin-bottom: 10px;
-      }
+  <h2>🛠 기술 스택</h2>
 
-      .featured-card .project-link {
-        position: absolute;
-        right: 22px;
-        bottom: 18px;
-        background: #0366d6;
-        color: #fff;
-        padding: 6px 14px;
-        border-radius: 8px;
-        font-size: 0.95em;
-        text-decoration: none;
-        transition: background 0.2s;
-        z-index: 2;
-      }
-      .featured-card .project-link {
-        position: absolute;
-        right: 22px;
-        bottom: 18px;
-        background: #0366d6;
-        color: #fff;
-        padding: 6px 14px;
-        border-radius: 8px;
-        font-size: 0.95em;
-        text-decoration: none;
-        transition: background 0.2s;
-        z-index: 2;
-      }
+  <p align="center">
+    <a href="https://unity.com" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg" width="42" height="42"
+        class="icon-invert" />
+    </a>
+  </p>
+  <p align="center"><sub>
+      <b>Game Engine</b> : Unity<br>
+      멀티플레이 게임, 커스텀 카메라·입력 시스템, 물리 기반 상호작용 구현
+    </sub></p>
 
-      .featured-card .project-link:hover {
-        background: #024eaa;
-      }
-      .featured-card .project-link:hover {
-        background: #024eaa;
-      }
 
-      .resume-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 24px 0;
-        font-size: 1em;
-        background: #f8fafc;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      }
-      .resume-table {
-        width: 100%;
-        border-collapse: collapse;
-        margin: 24px 0;
-        font-size: 1em;
-        background: #f8fafc;
-        border-radius: 12px;
-        overflow: hidden;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
-      }
+  <p align="center">
+    <a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" width="40" height="40" />
+    </a>
+    <a href="https://isocpp.org" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" width="40"
+        height="40" />
+    </a>
+    <a href="https://www.java.com" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" width="40" height="40" />
+    </a>
+    <a href="https://www.python.org" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" width="40" height="40" />
+    </a>
+  </p>
+  <p align="center">
+    <sub><b>Languages</b> : C# · C++ · Java · Python</sub>
+  </p>
 
-      .resume-table th,
-      .resume-table td {
-        padding: 14px 12px;
-        text-align: left;
-      }
-      .resume-table th,
-      .resume-table td {
-        padding: 14px 12px;
-        text-align: left;
-      }
+  <p align="center">
+    <a href="https://spring.io/projects/spring-boot" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" width="40" height="40" />
+    </a>
+    <a href="https://www.djangoproject.com/" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" width="40" height="40" />
+    </a>
+    <a href="https://www.postgresql.org" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" width="40"
+        height="40" />
+    </a>
+  </p>
+  <p align="center"><sub>
+      <b>Web / Backend</b> : Spring Boot · Django · PostgreSQL<br>
+      게임/서비스 API, 세션 관리, OCR·AI 파이프라인 구현
+    </sub></p>
 
-      .resume-table thead {
-        background: #e3eaf5;
-      }
-      .resume-table thead {
-        background: #e3eaf5;
-      }
 
-      .resume-table th {
-        font-weight: 600;
-        color: #2d3a4a;
-        border-bottom: 2px solid #d1d5db;
-      }
-      .resume-table th {
-        font-weight: 600;
-        color: #2d3a4a;
-        border-bottom: 2px solid #d1d5db;
-      }
+  <p align="center">
+    <a href="https://www.postman.com" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" width="40"
+        height="40" />
+    </a>
+    <a href="https://github.com" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" width="40" height="40"
+        class="icon-invert" />
+    </a>
+    <a href="https://www.docker.com" target="_blank">
+      <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" width="40" height="40" />
+    </a>
+  </p>
+  <p align="center">
+    <sub><b>Tools</b> : Postman · GitHub · Docker</sub>
+  </p>
 
-      .resume-table tr {
-        border-bottom: 1px solid #e5e7eb;
-      }
-      .resume-table tr {
-        border-bottom: 1px solid #e5e7eb;
-      }
+  <h2>🐈‍⬛ Github Stat</h2>
+  <div align="center">
+    <p>
+      <img
+        src="https://github-readme-stats.vercel.app/api/top-langs?username=mjmj1&show_icons=true&locale=en&layout=compact"
+        alt="mjmj1" />
+    </p>
+    <p>
+      <img src="https://github-readme-stats.vercel.app/api?username=mjmj1&show_icons=true&locale=en" alt="mjmj1" />
+    </p>
+    <p>
+      <img src="https://github-readme-streak-stats.herokuapp.com/?user=mjmj1&" alt="mjmj1" />
+    </p>
+  </div>
+  <hr />
 
-      .resume-table tr:last-child {
-        border-bottom: none;
-      }
-      .resume-table tr:last-child {
-        border-bottom: none;
-      }
+  <hr>
 
-      .resume-table tbody tr:hover {
-        background: #f1f5fb;
-      }
+  <h2 id="featured">🚀 대표 프로젝트</h2>
 
-      /* =========================================
-       3. 다크 모드 (Dark Mode Override)
-       * 반드시 맨 아래에 위치해야 위 설정을 덮어씌웁니다.
-       ========================================= */
-      @media (prefers-color-scheme: dark) {
-        html {
-          background: #1e1e1e;
-          color: #e0e0e0;
-        }
+  <div class="project-box" id="thezoo">
 
-        a {
-          color: #9cd9ff;
-        }
-
-        /* 제목 태그 색상 변경 */
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-          color: #f0f0f0;
-        }
-
-        /* 프로젝트 박스 다크모드 적용 */
-        .project-box {
-          background: #2d2d2d;
-          border-color: #444;
-          color: #e0e0e0;
-        }
-
-        /* 대표 프로젝트 카드 다크모드 적용 */
-        .featured-card {
-          background: #2d2d2d;
-          border-color: #444;
-          color: #e0e0e0;
-        }
-
-        /* 이력 테이블 다크모드 적용 */
-        .resume-table {
-          background: #2d2d2d;
-          color: #e0e0e0;
-        }
-        .resume-table thead {
-          background: #3d3d3d;
-        }
-        .resume-table th {
-          color: #fff;
-          border-bottom: 2px solid #555;
-        }
-        .resume-table tr {
-          border-bottom: 1px solid #444;
-        }
-        .resume-table tbody tr:hover {
-          background: #383838;
-        }
-
-        /* 아이콘 반전 (Github 로고 등 검은색 아이콘을 흰색으로) */
-        img.icon-invert {
-          filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(1.05);
-        }
-
-        /* 인용구 및 코드블록 */
-        blockquote {
-          border-left-color: #555;
-          color: #aaa;
-        }
-        pre,
-        code {
-          background: #333;
-          color: #eee;
-        }
-      }
-    </style>
-  </head>
-      .resume-table tbody tr:hover {
-        background: #f1f5fb;
-      }
-
-      /* =========================================
-       3. 다크 모드 (Dark Mode Override)
-       * 반드시 맨 아래에 위치해야 위 설정을 덮어씌웁니다.
-       ========================================= */
-      @media (prefers-color-scheme: dark) {
-        html {
-          background: #1e1e1e;
-          color: #e0e0e0;
-        }
-
-        a {
-          color: #9cd9ff;
-        }
-
-        /* 제목 태그 색상 변경 */
-        h1,
-        h2,
-        h3,
-        h4,
-        h5 {
-          color: #f0f0f0;
-        }
-
-        /* 프로젝트 박스 다크모드 적용 */
-        .project-box {
-          background: #2d2d2d;
-          border-color: #444;
-          color: #e0e0e0;
-        }
-
-        /* 대표 프로젝트 카드 다크모드 적용 */
-        .featured-card {
-          background: #2d2d2d;
-          border-color: #444;
-          color: #e0e0e0;
-        }
-
-        /* 이력 테이블 다크모드 적용 */
-        .resume-table {
-          background: #2d2d2d;
-          color: #e0e0e0;
-        }
-        .resume-table thead {
-          background: #3d3d3d;
-        }
-        .resume-table th {
-          color: #fff;
-          border-bottom: 2px solid #555;
-        }
-        .resume-table tr {
-          border-bottom: 1px solid #444;
-        }
-        .resume-table tbody tr:hover {
-          background: #383838;
-        }
-
-        /* 아이콘 반전 (Github 로고 등 검은색 아이콘을 흰색으로) */
-        img.icon-invert {
-          filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(1.05);
-        }
-
-        /* 인용구 및 코드블록 */
-        blockquote {
-          border-left-color: #555;
-          color: #aaa;
-        }
-        pre,
-        code {
-          background: #333;
-          color: #eee;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <h1>Welcome 🐓</h1>
+    <h3>🎮 The Zoo</h3>
+    <p><b>AI NPC와 인간 플레이어가 공존하는 소셜 디덕션 멀티플레이 게임</b></p>
 
     <p>
-      게임 개발자 및 백엔드 개발자를 지망하는 김만종입니다.<br />
-      현재 멀티 플레이 소셜 디덕션 장르에 AI를 접목한 게임
-      <a href="https://github.com/mjmj1/The-Zoo" target="_blank">The Zoo</a>
-      개발에 집중하고 있습니다.<br />
-      주요 관심사는 <b>Unity</b>, <b>C#</b>, <b>백엔드 개발</b>입니다.
+      <b>기간</b>: 2025.03 ~ 2025.12<br>
+      <b>인원</b>: 2명<br>
+      <b>역할</b>: 팀장 / 게임 기획 · 네트워크 구조 설계 · AI 시스템 개발
     </p>
 
-    <hr />
-    <hr />
+    <hr>
 
-    <h2>🏢 이력</h2>
-    <table class="resume-table">
-      <thead>
-        <tr>
-          <th>기간</th>
-          <th>이름</th>
-          <th>내용</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>2024.05.22 ~ 2025.03.01</td>
-          <td>비엔에프테크놀로지(주)</td>
-          <td>원자력 발전소 모니터링 및 조작 SW 개발</td>
-        </tr>
-        <tr>
-          <td>2025.06.31 ~ 2025.08.20</td>
-          <td>아이와즈 인턴</td>
-          <td>AI 활용 엣지 디바이스 얼굴 인식 프로젝트</td>
-        </tr>
-      </tbody>
-    </table>
+    <h4>1. 프로젝트 개요</h4>
+    <p>
+      <b>The Zoo</b>는 AI NPC들 사이에 숨어 있는 실제 플레이어를 찾아내는
+      <b>소셜 디덕션 멀티플레이 게임</b>입니다.<br>
+      플레이어와 AI가 동일한 행동을 수행하도록 설계하여,
+      관찰과 추론이 핵심 재미 요소가 되도록 기획했습니다.
+    </p>
 
-    <h2>📎 Contect</h2>
+    <h4>2. 기술적 특징</h4>
     <ul>
-      <li>💻 <a href="https://github.com/mjmj1">GitHub</a></li>
-      <li>📫 <a href="mailto:mjong3365@gmail.com">mjong3365@gmail.com</a></li>
-    </ul>
-    <h2>📎 Contect</h2>
-    <ul>
-      <li>💻 <a href="https://github.com/mjmj1">GitHub</a></li>
-      <li>📫 <a href="mailto:mjong3365@gmail.com">mjong3365@gmail.com</a></li>
+      <li>
+        <b>분산 권한 멀티플레이 구조</b><br>
+        Netcode for GameObjects 기반 Distributed Authority 토폴로지를 적용하여
+        호스트 의존도를 줄이고 플레이어 중심의 동기화 구조 설계
+      </li>
+      <li>
+        <b>ML-Agents 기반 AI NPC</b><br>
+        AI NPC가 플레이어와 유사한 이동·상호작용을 수행하도록 학습 환경 및 보상 구조 설계
+      </li>
+      <li>
+        <b>구형 맵 기반 이동 시스템</b><br>
+        행성 표면을 따라 이동하는 캐릭터 컨트롤러와 커스텀 중력 시스템 직접 구현
+      </li>
     </ul>
 
-    <hr />
-    <hr />
+    <h4>3. 담당 업무</h4>
+    <ul>
+      <li>게임 전체 기획 및 핵심 재미 구조 설계</li>
+      <li>NGO 기반 멀티플레이 세션 흐름 설계 및 구현</li>
+      <li>플레이어 이동, 카메라, 입력 시스템 구현</li>
+      <li>Seeker / Hider 역할 로직 및 승패 조건 설계</li>
+      <li>ML-Agents 학습 환경 구성 및 AI NPC 행동 적용</li>
+      <li>UI, 사운드, 상호작용 시스템 개발</li>
+    </ul>
 
-    <h2>🛠 기술 스택</h2>
-    <h2>🛠 기술 스택</h2>
+    <h4>4. 기술적 도전과 해결</h4>
+    <ul>
+      <li>
+        <b>네트워크 동기화 문제</b><br>
+        플레이어·AI NPC·환경 오브젝트 간 NetworkObject 생명주기를 정리하고
+        씬 전환 시점과 스폰 흐름을 구조화하여 안정성 확보
+      </li>
+      <li>
+        <b>AI와 플레이어의 구분 문제</b><br>
+        단순 랜덤 행동이 아닌,
+        플레이어가 실제로 할 법한 행동 패턴을 보상 설계에 반영
+      </li>
+      <li>
+        <b>멀티플레이 확장성</b><br>
+        세션 설정 변경, 랜덤 스폰, 역할 배정 로직을 모듈화하여
+        향후 모드 확장 가능하도록 구조 설계
+      </li>
+    </ul>
 
-    <p align="center">
-      <a href="https://unity.com" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"
-          width="42"
-          height="42"
-          class="icon-invert"
-        />
-      </a>
-    </p>
-    <p align="center">
-      <sub><b>Game Engine</b> : Unity</sub>
-    </p>
+    <h4>5. 결과 및 학습</h4>
+    <ul>
+      <li>멀티플레이 게임에서 네트워크 구조 설계의 중요성 체감</li>
+      <li>AI 시스템은 기술 자체보다 게임 디자인과 밀접하다는 인식 확립</li>
+      <li>실험적 프로젝트를 끝까지 운영 가능한 구조로 발전시키는 경험</li>
+    </ul>
 
-    <p align="center">
-      <a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-      <a href="https://isocpp.org" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-      <a href="https://www.java.com" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-      <a href="https://www.python.org" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-    </p>
-    <p align="center">
-      <sub><b>Languages</b> : C# · C++ · Java · Python</sub>
-    </p>
-    <p align="center">
-      <a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-      <a href="https://isocpp.org" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-      <a href="https://www.java.com" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-      <a href="https://www.python.org" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-    </p>
-    <p align="center">
-      <sub><b>Languages</b> : C# · C++ · Java · Python</sub>
+    <p>
+      <b>Tech Stack</b>: Unity 6 · C# · Netcode for GameObjects · ML-Agents<br>
+      <b>GitHub</b>: <a href="https://github.com/mjmj1/The-Zoo" target="_blank">https://github.com/mjmj1/The-Zoo</a>
     </p>
 
-    <p align="center">
-      <a href="https://spring.io/projects/spring-boot" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-      <a href="https://www.djangoproject.com/" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-      <a href="https://www.postgresql.org" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-    </p>
-    <p align="center">
-      <sub><b>Web / Backend</b> : Spring Boot · Django · PostgreSQL</sub>
+  </div>
+
+
+  <hr />
+
+  <h1>📜 프로젝트</h1>
+  <h2>Unity</h2>
+
+  <div class="project-box">
+    <h3>ML-Agents 기반 자율주행 실험 프로젝트</h3>
+
+    <p>
+      <b>기간</b>: 2023.06 ~ 2023.11 ·
+      <b>인원</b>: 6명 ·
+      <b>역할</b>: 팀장
     </p>
 
-    <p align="center">
-      <a href="https://www.postman.com" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-      <a href="https://github.com" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg"
-          width="40"
-          height="40"
-          class="icon-invert"
-        />
-      </a>
-      <a href="https://www.docker.com" target="_blank">
-        <img
-          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
-          width="40"
-          height="40"
-        />
-      </a>
-    </p>
-    <p align="center">
-      <sub><b>Tools</b> : Postman · GitHub · Docker</sub>
+    <p>
+      <b>요약</b><br>
+      카메라 입력만으로 차선을 인식해 주행하는 자율주행 시스템을 강화학습으로 실험한 프로젝트
     </p>
 
-    <h2>🐈‍⬛ Github Stat</h2>
-    <div align="center">
-      <p>
-        <img
-          src="https://github-readme-stats.vercel.app/api/top-langs?username=mjmj1&show_icons=true&locale=en&layout=compact"
-          alt="mjmj1"
-        />
-      </p>
-      <p>
-        <img
-          src="https://github-readme-stats.vercel.app/api?username=mjmj1&show_icons=true&locale=en"
-          alt="mjmj1"
-        />
-      </p>
-      <p>
-        <img
-          src="https://github-readme-streak-stats.herokuapp.com/?user=mjmj1&"
-          alt="mjmj1"
-        />
-      </p>
-    </div>
-    <hr />
-    <h2>🐈‍⬛ Github Stat</h2>
-    <div align="center">
-      <p>
-        <img
-          src="https://github-readme-stats.vercel.app/api/top-langs?username=mjmj1&show_icons=true&locale=en&layout=compact"
-          alt="mjmj1"
-        />
-      </p>
-      <p>
-        <img
-          src="https://github-readme-stats.vercel.app/api?username=mjmj1&show_icons=true&locale=en"
-          alt="mjmj1"
-        />
-      </p>
-      <p>
-        <img
-          src="https://github-readme-streak-stats.herokuapp.com/?user=mjmj1&"
-          alt="mjmj1"
-        />
-      </p>
-    </div>
-    <hr />
+    <h4>기술 선택 배경</h4>
+    <ul>
+      <li>센서 의존도를 줄이기 위해 카메라 기반 입력만 사용</li>
+      <li>강화학습의 실제 한계와 환경·보상 설계의 중요성을 체험하기 위해 ML-Agents 선택</li>
+    </ul>
 
-    <h2 id="featured">🚀 대표 프로젝트</h2>
-    <div class="featured-projects">
-      <div class="featured-card">
-        <a class="project-link" href="#thezoo">바로가기</a>
-        <h3>🎮 The Zoo — 소셜 디덕션 멀티플레이 게임</h3>
-        <ul>
-          <li>
-            Unity 6 + Netcode for GameObjects 기반 분산 권한 토폴로지 적용
-          </li>
-          <li>ML-Agents를 활용한 AI NPC 적용</li>
-        </ul>
-        <p>
-          <b>Tech</b>: Unity · Netcode for GameObjects · ML-Agents<br />
-          <b>Link</b>:
-          <a href="https://github.com/mjmj1/The-Zoo" target="_blank"
-            >GitHub 바로가기</a
-          >
-        </p>
-      </div>
-      <div class="featured-card">
-        <a class="project-link" href="#readingbridge">바로가기</a>
-        <h3>📚 리딩 브릿지 — 생성형 AI 난독증 아동 교재 생성 서비스</h3>
-        <ul>
-          <li>생성형 AI로 학습 난이도·문장 구조를 조절한 맞춤형 교재 생성</li>
-          <li>
-            OCR·메타데이터 파이프라인과 저장/조회 API를 통해 교재 제작 자동화
-          </li>
-        </ul>
-        <p>
-          <b>역할</b>: 프롬프트 최적화, DB 구조 설계/구현, 저장·생성 API 개발<br />
-          <b>Tech</b>: Spring Boot · PostgreSQL · Tesseract · OpenAI<br />
-          <b>Link</b>:
-          <a
-            href="https://github.com/orgs/semitation/repositories"
-            target="_blank"
-            >GitHub 바로가기</a
-          >
-        </p>
-      </div>
-    </div>
+    <h4>책임 및 기여</h4>
+    <ul>
+      <li>ML-Agents 학습 환경 및 에피소드 구조 설계</li>
+      <li>OpenCV 기반 차선 인식 파이프라인을 C#으로 포팅</li>
+      <li>Agent 보상·패널티 규칙 설계</li>
+    </ul>
 
-    <hr />
-    <hr />
+    <h4>기술적 한계와 학습</h4>
+    <ul>
+      <li>단순 패널티 기반 보상으로는 복귀 행동을 학습시키기 어렵다는 한계 확인</li>
+      <li>강화학습 성능은 알고리즘보다 환경·보상 설계에 크게 의존함을 체감</li>
+    </ul>
 
-    <h1>📜 프로젝트</h1>
-    <h2>Unity</h2>
-    <h1>📜 프로젝트</h1>
-    <h2>Unity</h2>
+    <h4>결과</h4>
+    <ul>
+      <li>단순 환경에서는 주행 성공, 복잡한 상황에서는 일반화 실패</li>
+      <li>이 경험을 이후 AI NPC 프로젝트 설계에 반영</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <ul>
+      <li>
+        <img src="assets/portfolio/그림2.png" width="250" height="250" />
+        ➡️
+        <img src="assets/portfolio/그림1.png" width="250" height="250" />
+      </li>
+      <li>
+        Opencvsharp 라이브러리를 이용하여 가상 환경의 차선을 인식한 이미지를
+        텍스쳐로 담아두고 Agents는 이 이미지를 이용해서 학습함
+      </li>
+      <li>
+        실제 환경에서 적용하는 것을 염두하여 단순 카메라만 이용해서
+        자율주행을 시도하기 위함
+      </li>
+    </ul>
+    <ul>
+      <li><img src="assets/portfolio/그림3.png" width="600" /></li>
+      <li>실시간으로 차선 인식 이미지를 카메라 센서 데이터로 사용</li>
+      <li>
+        차선을 넘게 되면 EndEpisode() 라는 함수가 호출되어 패널티를 받고
+        학습을 종료하도록 환경을 구성
+      </li>
+    </ul>
+    <ul>
+      <li><img src="assets/portfolio/그림4.png" width="600" /></li>
+      <li>
+        차선을 체크하는 콜라이더가 없는 단순한 차선과 Agent만 있는 환경을
+        만들어서 적용시켰을 때, 실제로 움직이는 것을 확인함
+      </li>
+      <li>
+        하지만 차선을 벗어나게 되면 복귀하는 것을 학습하지 못해서 전체적인
+        퀄리티가 떨어졌음
+      </li>
+      <li>
+        개발 역량, 지식, AI 학습량이 부족하여 만족스러운 결과가 나오지 않음
+      </li>
+    </ul>
+  </div>
 
-    <div class="project-box">
-      <h3>ML-Agents를 이용한 자율주행 시스템</h3>
-      <p>
-        <b>기간:</b> 2023.06 ~ 2023.11 (6개월)<br />
-        <b>인원:</b> 6명<br />
-        <b>역할:</b> 팀장
-      </p>
-      <p>
-        유니티에서 제공하는 강화학습 라이브러리인 ML-Agents를 활용해서 자율주행
-        시스템을 만들고 이를 실제 물체에 적용시켜 보겠다는 기획으로
-        진행했습니다.<br />
-        Unity와 ML-Agents 라이브러리 모두 처음 사용해서 만족스러운 결과를 내지
-        못했습니다.
-      </p>
-      <h4>맡은 업무</h4>
-      <ul>
-        <li>ML-Agents 학습 환경 구성</li>
-        <li>Agents 학습 시나리오 구현</li>
-        <li>C++ OpenCV 차선 인식 코드를 C#으로 포팅</li>
-      </ul>
-      <h4>프로젝트 내용</h4>
-      <h5>입력 데이터</h5>
-      <ul>
-        <li>
-          <img src="assets/portfolio/그림2.png" width="250" height="250" />
-          ➡️
-          <img src="assets/portfolio/그림1.png" width="250" height="250" />
-        </li>
-        <li>
-          Opencvsharp 라이브러리를 이용하여 가상 환경의 차선을 인식한 이미지를
-          텍스쳐로 담아두고 Agents는 이 이미지를 이용해서 학습함
-        </li>
-        <li>
-          실제 환경에서 적용하는 것을 염두해두고, 단순 카메라만 이용해서
-          자율주행을 시도하기 위해서 현 상태로 설계를 하게 됨
-        </li>
-      </ul>
-      <ul>
-        <li><img src="assets/portfolio/그림3.png" width="600" /></li>
-        <li>실시간으로 차선 인식 이미지를 카메라 센서 데이터로 사용</li>
-        <li>
-          차선을 넘게 되면 EndEpisode() 라는 함수가 호출되어 패널티를 받고
-          학습을 종료하도록 환경을 구성
-        </li>
-      </ul>
-      <ul>
-        <li><img src="assets/portfolio/그림4.png" width="600" /></li>
-        <li>
-          차선을 체크하는 콜라이더가 없는 단순한 차선과 Agent만 있는 환경을
-          만들어서 적용시켰을 때, 실제로 움직이는 것을 확인함
-        </li>
-        <li>
-          하지만 차선을 벗어나게 되면 복귀하는 것을 학습하지 못해서 전체적인
-          퀄리티가 떨어졌음
-        </li>
-        <li>
-          개발 역량, 지식, AI 학습량이 부족하여 만족스러운 결과가 나오지 않음
-        </li>
-      </ul>
-    </div>
+  <div class="project-box" id="thezoo">
+    <h3>The Zoo — AI NPC 기반 소셜 디덕션 멀티플레이 게임</h3>
 
-    <div class="project-box" id="thezoo">
-      <h3>
-        ML-Agent + Netcode for GameObjects를 이용한 숨바꼭질 게임 : The Zoo
-      </h3>
-      <p>
-        <b>기간:</b> 2025.03 ~ 2025.12<br />
-        <b>인원:</b> 2명<br />
-        <b>역할:</b> 팀장<br />
-        <b>GitHub:</b> <a href="https://github.com/mjmj1/The-Zoo">The Zoo</a>
-      </p>
-      <img src="assets/portfolio/TheZoo/TheZoo_Poster.png" width="600" />
-      <p>
-        AI NPC 사이에서 진짜 플레이어를 찾아내는 소셜 디덕션 멀티플레이
-        게임입니다.<br />
-        이전에 진행했던 자율주행 프로젝트 실패 경험을 바탕으로 새롭게 진행한
-        게임 프로젝트입니다.<br />
-        ML-Agents로 학습된 AI NPC 사이에서 진짜 플레이어를 찾는 숨바꼭질같은
-        게임으로 기획하였습니다.<br />
-        게임 모드는 총 2가지로 Hide & Seek 모드, Last Man Standing 모드가
-        있습니다.
-      </p>
-      <h4>맡은 업무</h4>
-      <ul>
-        <li>게임 기획 및 설계</li>
-        <li>Netcode for Gameobjects(NGO)를 이용한 네트워크 환경 구성</li>
-        <li>세션 생성, 접속, 퇴장 등 NGO를 이용한 멀티플레이 환경 구현</li>
-        <li>Seeker와 Hider 역할 시스템 구현 (공격 및 피격 등)</li>
-        <li>
-          ML-Agents를 이용한 학습 환경 구현 및 학습, 학습된 모델을 적용할 AI NPC
-          구현
-        </li>
-        <li>사운드, UI 시스템 개발</li>
-        <li>반복 이벤트 시스템 구현</li>
-      </ul>
-      <h4>프로젝트 내용</h4>
-      <h5>인게임 이미지</h5>
-      <ul>
-        <li>타이틀 화면</li>
-        <li>
-          <img
-            src="assets/portfolio/TheZoo/Title.png"
-            width="600"
-            alt="타이틀 화면"
-          />
-        </li>
-        <li>로비</li>
-        <li>
-          <img src="assets/portfolio/TheZoo/Lobby.png" width="600" alt="로비" />
-        </li>
-        <li>게임 설정</li>
-        <li>
-          <img
-            src="assets/portfolio/TheZoo/GameSetting.png"
-            width="600"
-            alt="게임 설정"
-          />
-        </li>
-        <li>인게임 화면</li>
-        <li>
-          <img
-            src="assets/portfolio/TheZoo/InGame.png"
-            width="600"
-            alt="인게임 화면"
-          />
-        </li>
-      </ul>
+    <p>
+      <b>기간</b>: 2025.03 ~ 2025.12 ·
+      <b>인원</b>: 2명 ·
+      <b>역할</b>: 팀장<br>
+      <b>GitHub</b>: <a href="https://github.com/mjmj1/The-Zoo">The Zoo</a>
+    </p>
 
-      <h5>액션</h5>
-      <ul>
-        <li>대쉬, 공격(상호작용), 회전, 점프를 구현함</li>
-        <li>상호작용</li>
-        <li>
-          <img
-            src="assets/portfolio/TheZoo/Interaction.png"
-            width="600"
-            alt="상호작용"
-          />
-        </li>
-        <li>회전</li>
-        <li>
-          <img src="assets/portfolio/TheZoo/Spin.gif" width="600" alt="회전" />
-        </li>
-      </ul>
+    <p>
+      <b>한 줄 요약</b><br>
+      AI NPC와 실제 플레이어의 구분을 어렵게 만들어 관찰과 추론이 핵심이 되는 멀티플레이 게임
+    </p>
 
-      <h5>반복 이벤트 시스템</h5>
-      <ul>
-        <li>Hider는 주기적으로 미션을 수행해야 함</li>
-        <li>
-          <img
-            src="assets/portfolio/TheZoo/Mission.png"
-            width="600"
-            alt="미션"
-          />
-        </li>
-        <li>미션을 성공 or 실패에 따라 버프 및 디버프 제거 or 디버프를 얻음</li>
-        <li>버프</li>
-        <li>
-          <img src="assets/portfolio/TheZoo/Buff.gif" width="600" alt="버프" />
-        </li>
-        <li>디버프 제거</li>
-        <li>
-          <img
-            src="assets/portfolio/TheZoo/DebuffDelete.gif"
-            width="600"
-            alt="디버프 제거"
-          />
-        </li>
-        <li>디버프</li>
-        <li>
-          <img
-            src="assets/portfolio/TheZoo/Debuff.gif"
-            width="600"
-            alt="디버프"
-          />
-        </li>
-        <li>주기적으로 태풍이 발생함</li>
-        <li>
-          <img
-            src="assets/portfolio/TheZoo/Tornado.png"
-            width="600"
-            alt="태풍"
-          />
-        </li>
-        <li>발생한 태풍에 맞으면 5초 간 기절 및 넉백</li>
-        <li>
-          <img
-            src="assets/portfolio/TheZoo/TornadoHit.gif"
-            width="600"
-            alt="태풍 피격"
-          />
-        </li>
-      </ul>
+    <h4>기술 선택 이유</h4>
+    <ul>
+      <li>호스트 중심 구조의 한계를 직접 경험하기 위해 Distributed Authority 구조 채택</li>
+      <li>정형화된 AI가 아닌, 플레이어처럼 보이는 행동을 만들기 위해 ML-Agents 사용</li>
+    </ul>
 
-      <h5>게임 결과</h5>
-      <ul>
-        <li>Seeker는 Hider를 찾아 제거해야 하고 모두 제거하게 되면 승리</li>
-        <li>
-          <img
-            src="assets/portfolio/TheZoo/SeekerWin.gif"
-            width="600"
-            alt="Seeker 승리"
-          />
-        </li>
-        <li>Hider는 5분(설정 가능) 동안 살아남으면 승리</li>
-        <li>
-          <img
-            src="assets/portfolio/TheZoo/HiderWin.png"
-            width="600"
-            alt="Hider 승리"
-          />
-        </li>
-      </ul>
-    </div>
+    <h4>책임 영역</h4>
+    <ul>
+      <li>게임 전체 기획 및 핵심 재미 구조 설계</li>
+      <li>멀티플레이 세션 흐름, 역할 배정, 스폰 구조 설계</li>
+      <li>플레이어·AI 공통 이동 및 상호작용 구조 구현</li>
+    </ul>
 
-    <div class="project-box">
-      <h3>2025 InD GameJam : Throw it</h3>
-      <p>
-        <b>기간:</b> 2025.07.11 ~ 2025.07.13<br />
-        <b>인원:</b> 4명<br />
-        <b>역할:</b> 기획 및 개발
-      </p>
-      <p>
-        ‘빵’을 주제로 한 InD 게임잼 참가작으로, 던져서 만드는 빵 배달
-        게임입니다.<br />
-        디자이너와 기획자 없이 개발자만으로 진행했습니다.
-      </p>
-      <h4>맡은 업무</h4>
-      <ul>
-        <li>게임 기획 및 설계</li>
-        <li>게임 루프 구현</li>
-        <li>상호작용(당기기, 던지기, 튕기기 등) 구현</li>
-      </ul>
-      <h4>프로젝트 내용</h4>
-      <ul>
-        <li><img src="assets/portfolio/InD_image_0.png" width="600" /></li>
-        <li><img src="assets/portfolio/InD_image_1.gif" width="600" /></li>
-        <li><img src="assets/portfolio/InD_image_2.gif" width="600" /></li>
-      </ul>
-    </div>
+    <h4>기술적 도전</h4>
+    <ul>
+      <li>인디게임 개발 시 잘 선택하지 않는 멀티플레이 게임 개발</li>
+      <li>AI와 플레이어의 행동 차이가 드러나지 않도록 보상 구조 반복 조정</li>
+      <li>NetworkObject 생명주기와 씬 전환 흐름 안정화</li>
+    </ul>
 
-    <div class="project-box">
-      <h3>2025 게임마당 GameJam : WALL</h3>
-      <p>
-        <b>기간:</b> 2025.09.05 ~ 2025.09.07<br />
-        <b>인원:</b> 4명<br />
-        <b>역할:</b> 개발
-      </p>
-      <p>
-        게임마당 에서 개최한 게임잼에서 개발한 게임입니다. 기획 1 + 아트 1 +
-        개발 2 으로 팀이 구성되었습니다.<br />
-        “종말”을 주제로 한 퍼즐 액션 게임. 파쿠르, 로프, 사다리 등 다양한 액션
-        구현했습니다.
-      </p>
-      <h4>맡은 업무</h4>
-      <ul>
-        <li>플레이어 기본 조작 / 몬스터 이동 구현</li>
-        <li>파쿠르 액션 구현</li>
-        <li>사다리 오르내리기 구현</li>
-        <li>로프 오르내리기/반동 구현</li>
-        <li>엘레베이터 구현</li>
-        <li>스프라이트 애니메이션 적용</li>
-        <li>유니티 엔진 관련 트러블 슈팅</li>
-      </ul>
-      <h4>프로젝트 내용</h4>
-      <h5>메인 화면</h5>
-      <ul>
-        <li><img src="assets/portfolio/Wall_0.png" width="600" /></li>
-      </ul>
-      <h5>게임 플레이</h5>
-      <ul>
-        <li><img src="assets/portfolio/Wall_1.png" width="600" /></li>
-        <li><img src="assets/portfolio/Wall_2.png" width="600" /></li>
-      </ul>
-    </div>
+    <h4>설계 판단 및 코드 회고</h4>
+    <ul>
+      <li>초기에는 이동과 동기화가 필요한 데이터를 한 클래스에서 처리했으나, 구조 복잡도가 빠르게 증가</li>
+      <li>입력·이동·동기화 책임을 분리하는 방향으로 구조 개선</li>
+      <li>멀티플레이 프로젝트에서 초기 책임 분리의 중요성을 체감</li>
+    </ul>
 
-    <hr />
-    <h2>Web</h2>
-    <hr />
-    <h2>Web</h2>
+    <h4>결과 및 학습</h4>
+    <ul>
+      <li>멀티플레이 구조 설계 경험 확보</li>
+      <li>AI 시스템은 기술 문제가 아니라 게임 디자인 문제라는 인식 확립</li>
+    </ul>
 
-    <div class="project-box">
-      <h3>말레이시아 해외 인턴십 프로젝트</h3>
-      <p>
-        <b>기간:</b> 2025.02.16 ~ 2025.03.02<br />
-        <b>인원:</b> 6명<br />
-        <b>역할:</b> 팀장<br />
-        <b>GitHub:</b>
-        <a href="https://github.com/mjmj1/UCSI_Subject_Team1"
-          >UCSI_Subject_Team1</a
-        >
-      </p>
-      <p>UCSI 대학의 강의실 중복 문제를 AI로 해결하는 Django 기반 프로젝트</p>
-      <h4>맡은 업무</h4>
-      <ul>
-        <li>말레이시아 PM과 소통</li>
-        <li>Django 서버 구축</li>
-        <li>RDB 설계 및 구축</li>
-        <li>API 설계 및 구현</li>
-        <li>데이터 정제 알고리즘 설계</li>
-      </ul>
-      <h4>프로젝트 내용</h4>
-      <iframe
-        src="assets/portfolio/Malaysia_team1_ppt.pdf"
-        width="100%"
-        height="600px"
-        style="border: 1px solid #ccc"
-      >
-        이 브라우저는 PDF를 지원하지 않습니다.
-        <a href="assets/portfolio/ucsi_project.pdf"
-          >여기에서 PDF를 다운로드하세요.</a
-        >
-      </iframe>
-    </div>
+    <h4>프로젝트 내용</h4>
+    <h5>인게임 이미지</h5>
+    <ul>
+      <li>타이틀 화면</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/Title.png" width="600" alt="타이틀 화면" />
+      </li>
+      <li>로비</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/Lobby.png" width="600" alt="로비" />
+      </li>
+      <li>게임 설정</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/GameSetting.png" width="600" alt="게임 설정" />
+      </li>
+      <li>인게임 화면</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/InGame.png" width="600" alt="인게임 화면" />
+      </li>
+    </ul>
 
-    <div class="project-box">
-      <h3>AWS S3를 이용한 교내 파일 공유 서비스: 한밭박스</h3>
-      <p>
-        <b>기간:</b> 2024.10.07 ~ 2024.11.10<br />
-        <b>인원:</b> 3명<br />
-        <b>역할:</b> 백엔드<br />
-        <b>GitHub:</b>
-        <a href="https://github.com/west-eastH/Hanbat-Box"
-          >Hanbat-Box Repository</a
-        >
-      </p>
-      <p>
-        교내 경진 대회에 출품한 작품<br />
-        AWS S3 기반의 교내 파일 공유 서비스<br />
-        Spring Boot와 S3 통합으로 대용량 파일 처리 최적화
-      </p>
-      <h4>맡은 업무</h4>
-      <ul>
-        <li>Java Spring 백엔드 개발</li>
-        <li>AWS S3 인프라 구축 및 운영 관리</li>
-        <li>서버 애플리케이션과 S3 간 파일 통신 모듈 설계</li>
-        <li>대용량 파일 입출력 최적화</li>
-        <li>서버 파일 다운로드 기능 구현</li>
-      </ul>
-      <h4>프로젝트 내용</h4>
-      <iframe
-        src="assets/portfolio/KCS팀_한밭박스_발표프레젠테이션.pdf"
-        width="100%"
-        height="600px"
-        style="border: 1px solid #ccc"
-      >
-        이 브라우저는 PDF를 지원하지 않습니다.
-        <a href="assets/portfolio/KCS팀_한밭박스_발표프레젠테이션.pdf"
-          >여기에서 PDF를 다운로드하세요.</a
-        >
-      </iframe>
-    </div>
+    <h5>액션</h5>
+    <ul>
+      <li>대쉬, 공격(상호작용), 회전, 점프를 구현함</li>
+      <li>상호작용</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/Interaction.png" width="600" alt="상호작용" />
+      </li>
+      <li>회전</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/Spin.gif" width="600" alt="회전" />
+      </li>
+    </ul>
 
-    <div class="project-box" id="readingbridge">
-      <h3>생성형 AI를 활용한 난독증 아동용 교재 생성 서비스: 리딩브릿지</h3>
-      <p>
-        <b>기간:</b> 2025.03 ~ 2025.07<br />
-        <b>인원:</b> 5명<br />
-        <b>역할:</b> 백엔드<br />
-        <b>GitHub:</b>
-        <a href="https://github.com/orgs/semitation/repositories"
-          >리딩브릿지 Repository</a
-        >
-      </p>
-      <p>
-        교내 경진 대회에 출품한 작품<br />
-        생성형 AI를 활용해 난독증 아동을 위한 교재를 자동 생성하는 서비스
-      </p>
-      <h4>맡은 업무</h4>
-      <ul>
-        <li>RDB 구조 설계</li>
-        <li>AI 프롬프트 최적화</li>
-        <li>OCR, PDF 파싱</li>
-      </ul>
-      <h4>프로젝트 내용</h4>
-      <iframe
-        src="assets/portfolio/난독증_발표자료.pdf"
-        width="100%"
-        height="600px"
-        style="border: 1px solid #ccc"
-      >
-        이 브라우저는 PDF를 지원하지 않습니다.
-        <a href="assets/portfolio/난독증_발표자료.pdf"
-          >여기에서 PDF를 다운로드하세요.</a
-        >
-      </iframe>
-    </div>
+    <h5>반복 이벤트 시스템</h5>
+    <ul>
+      <li>Hider는 주기적으로 미션을 수행해야 함</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/Mission.png" width="600" alt="미션" />
+      </li>
+      <li>미션을 성공 or 실패에 따라 버프 및 디버프 제거 or 디버프를 얻음</li>
+      <li>버프</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/Buff.gif" width="600" alt="버프" />
+      </li>
+      <li>디버프 제거</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/DebuffDelete.gif" width="600" alt="디버프 제거" />
+      </li>
+      <li>디버프</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/Debuff.gif" width="600" alt="디버프" />
+      </li>
+      <li>주기적으로 태풍이 발생함</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/Tornado.png" width="600" alt="태풍" />
+      </li>
+      <li>발생한 태풍에 맞으면 5초 간 기절 및 넉백</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/TornadoHit.gif" width="600" alt="태풍 피격" />
+      </li>
+    </ul>
 
-    <p style="text-align: center; color: #777">© 2025 김만종 Portfolio</p>
-    <p style="text-align: center; color: #777">© 2025 김만종 Portfolio</p>
+    <h5>게임 결과</h5>
+    <ul>
+      <li>Seeker는 Hider를 찾아 제거해야 하고 모두 제거하게 되면 승리</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/SeekerWin.gif" width="600" alt="Seeker 승리" />
+      </li>
+      <li>Hider는 5분(설정 가능) 동안 살아남으면 승리</li>
+      <li>
+        <img src="assets/portfolio/TheZoo/HiderWin.png" width="600" alt="Hider 승리" />
+      </li>
+    </ul>
+  </div>
 
-    <style>
-      html[data-theme="dark"] img.icon-invert {
-        filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(1.05);
-      }
-    </style>
-  </body>
-    <style>
-      html[data-theme="dark"] img.icon-invert {
-        filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(1.05);
-      }
-    </style>
-  </body>
+  <div class="project-box">
+    <h3>Throw it — 2025 InD GameJam</h3>
+
+    <p>
+      <b>기간</b>: 2025.07.11 ~ 2025.07.13 ·
+      <b>인원</b>: 4명 ·
+      <b>역할</b>: 기획 및 개발
+    </p>
+
+    <p>
+      <b>한 줄 요약</b><br>
+      상호작용 요소를 상속 구조로 설계하여 확장성을 고려해 구현한 물리 기반 게임잼 프로젝트
+    </p>
+
+    <h4>설계 및 기여</h4>
+    <ul>
+      <li>상호작용 오브젝트 공통 베이스 클래스를 정의하고 상속 구조로 구현</li>
+      <li>당기기·던지기·튕기기 등 다양한 상호작용을 동일한 인터페이스로 처리</li>
+      <li>짧은 개발 기간에도 기능 확장이 가능한 구조 유지</li>
+    </ul>
+
+    <h4>결과</h4>
+    <ul>
+      <li>상호작용 오브젝트 추가 시 최소한의 코드 수정으로 확장 가능</li>
+      <li>게임잼 기간 내 안정적인 플레이 루프 완성</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <ul>
+      <li><img src="assets/portfolio/InD_image_0.png" width="600" /></li>
+      <li><img src="assets/portfolio/InD_image_1.gif" width="600" /></li>
+      <li><img src="assets/portfolio/InD_image_2.gif" width="600" /></li>
+    </ul>
+  </div>
+
+  <div class="project-box">
+    <h3>WALL — 2025 게임마당 GameJam</h3>
+
+    <p>
+      <b>기간</b>: 2025.09.05 ~ 2025.09.07 ·
+      <b>인원</b>: 4명 ·
+      <b>역할</b>: 개발
+    </p>
+
+    <p>
+      <b>한 줄 요약</b><br>
+      제한된 시간 안에 파쿠르와 환경 상호작용을 중심으로 완성한 퍼즐 액션 게임
+    </p>
+
+    <h4>기여 및 책임 영역</h4>
+    <ul>
+      <li>플레이어 이동 및 기본 조작 시스템 구현</li>
+      <li>파쿠르·로프·사다리 등 환경 기반 액션 설계·구현</li>
+      <li>몬스터 이동 로직 및 상호작용 구현</li>
+      <li>유니티 엔진 관련 트러블 슈팅 및 기능 통합</li>
+    </ul>
+
+    <h4>결과</h4>
+    <ul>
+      <li>게임잼 기간 내 핵심 액션 루프 완성</li>
+      <li>다양한 이동 요소를 하나의 플레이 흐름으로 통합</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <h5>메인 화면</h5>
+    <ul>
+      <li><img src="assets/portfolio/Wall_0.png" width="600" /></li>
+    </ul>
+    <h5>게임 플레이</h5>
+    <ul>
+      <li><img src="assets/portfolio/Wall_1.png" width="600" /></li>
+      <li><img src="assets/portfolio/Wall_2.png" width="600" /></li>
+    </ul>
+  </div>
+
+  <hr />
+  <h2>Web</h2>
+
+  <div class="project-box">
+    <h3>말레이시아 해외 인턴십 — 강의실 배정 최적화 시스템</h3>
+
+    <p>
+      <b>기간</b>: 2025.02.16 ~ 2025.03.02 ·
+      <b>인원</b>: 6명 ·
+      <b>역할</b>: 팀장<br>
+      <b>GitHub</b>: <a href="https://github.com/mjmj1/UCSI_Subject_Team1">UCSI_Subject_Team1</a>
+    </p>
+
+    <p>
+      <b>한 줄 요약</b><br>
+      강의실 중복 문제를 데이터 구조와 API 설계로 해결한 Django 기반 백엔드 프로젝트
+    </p>
+
+    <h4>책임 및 기여</h4>
+    <ul>
+      <li>다국적 팀 환경에서 요구사항 정리 및 커뮤니케이션 총괄</li>
+      <li>Django 서버 아키텍처 설계 및 구축</li>
+      <li>강의·강의실·시간표 관계를 고려한 RDB 설계</li>
+      <li>강의실 중복 최소화를 위한 데이터 정제 로직 구현</li>
+    </ul>
+
+    <h4>결과 및 학습</h4>
+    <ul>
+      <li>현실 문제를 서버 구조로 풀어내는 경험</li>
+      <li>팀 리드 역할에서의 책임과 품질 관리 경험</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <iframe src="assets/portfolio/Malaysia_team1_ppt.pdf" width="100%" height="600px" style="border: 1px solid #ccc">
+      이 브라우저는 PDF를 지원하지 않습니다.
+      <a href="assets/portfolio/ucsi_project.pdf">여기에서 PDF를 다운로드하세요.</a>
+    </iframe>
+  </div>
+
+  <div class="project-box">
+    <h3>한밭박스 — AWS S3 기반 파일 공유 서비스</h3>
+
+    <p>
+      <b>기간</b>: 2024.10.07 ~ 2024.11.10 ·
+      <b>인원</b>: 3명 ·
+      <b>역할</b>: 백엔드<br>
+      <b>GitHub</b>: <a href="https://github.com/west-eastH/Hanbat-Box">Hanbat-Box Repository</a>
+    </p>
+
+    <p>
+      <b>한 줄 요약</b><br>
+      대용량 파일 처리를 고려해 Spring Boot와 AWS S3를 연동한 파일 공유 서비스
+    </p>
+
+    <h4>책임 및 기여</h4>
+    <ul>
+      <li>Spring Boot 기반 서버 설계 및 구현</li>
+      <li>AWS S3 버킷 구조 및 접근 권한 설계</li>
+      <li>스트리밍 방식의 파일 업로드·다운로드 처리</li>
+    </ul>
+
+    <h4>결과 및 학습</h4>
+    <ul>
+      <li>클라우드 스토리지를 활용한 서비스 설계 경험</li>
+      <li>성능·안정성을 고려한 백엔드 구조 이해</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <iframe src="assets/portfolio/KCS팀_한밭박스_발표프레젠테이션.pdf" width="100%" height="600px" style="border: 1px solid #ccc">
+      이 브라우저는 PDF를 지원하지 않습니다.
+      <a href="assets/portfolio/KCS팀_한밭박스_발표프레젠테이션.pdf">여기에서 PDF를 다운로드하세요.</a>
+    </iframe>
+  </div>
+
+  <div class="project-box" id="readingbridge">
+    <h3>리딩브릿지 — 생성형 AI 기반 난독증 아동 교재 생성 서비스</h3>
+
+    <p>
+      <b>기간</b>: 2025.03 ~ 2025.07 ·
+      <b>인원</b>: 5명 ·
+      <b>역할</b>: 백엔드<br>
+      <b>GitHub</b>: <a href="https://github.com/orgs/semitation/repositories">리딩브릿지 Repository</a>
+    </p>
+
+    <p>
+      <b>한 줄 요약</b><br>
+      OCR과 생성형 AI를 결합해 맞춤형 교재를 자동 생성하는 서비스 파이프라인 구축
+    </p>
+
+    <h4>책임 및 기여</h4>
+    <ul>
+      <li>교재·페이지·콘텐츠 구조를 고려한 RDB 설계</li>
+      <li>생성형 AI 프롬프트 구조 설계 및 반복 개선</li>
+      <li>OCR 기반 PDF 텍스트 추출 및 전처리</li>
+      <li>교재 생성·저장·조회 API 설계</li>
+    </ul>
+
+    <h4>결과 및 학습</h4>
+    <ul>
+      <li>AI 출력 품질이 데이터 구조와 프롬프트 설계에 의존함을 체감</li>
+      <li>AI 기능을 서비스 형태로 통합하는 전체 파이프라인 경험</li>
+    </ul>
+    <h4>프로젝트 내용</h4>
+    <iframe src="assets/portfolio/난독증_발표자료.pdf" width="100%" height="600px" style="border: 1px solid #ccc">
+      이 브라우저는 PDF를 지원하지 않습니다.
+      <a href="assets/portfolio/난독증_발표자료.pdf">여기에서 PDF를 다운로드하세요.</a>
+    </iframe>
+  </div>
+
+  <p style="text-align: center; color: #777">© 2025 김만종 Portfolio</p>
+
+  <style>
+    html[data-theme="dark"] img.icon-invert {
+      filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(1.05);
+    }
+  </style>
+</body>
+
 </html>
-
