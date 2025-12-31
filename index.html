@@ -15,7 +15,27 @@
         color: #1a1a1a;
         background-color: #fafafa;
       }
+  <head>
+    <meta charset="utf-8" />
+    <title>🐓</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* =========================================
+       1. 기본 스타일 (Light Mode Default)
+       ========================================= */
+      html {
+        line-height: 1.6;
+        font-family: "Pretendard", "Apple SD Gothic Neo", "Segoe UI", sans-serif;
+        font-size: 18px;
+        color: #1a1a1a;
+        background-color: #fafafa;
+      }
 
+      body {
+        margin: 0 auto;
+        max-width: 900px;
+        padding: 40px 20px;
+      }
       body {
         margin: 0 auto;
         max-width: 900px;
@@ -29,12 +49,26 @@
       h5 {
         color: #222;
       }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5 {
+        color: #222;
+      }
 
       a {
         color: #0366d6;
         text-decoration: none;
       }
+      a {
+        color: #0366d6;
+        text-decoration: none;
+      }
 
+      a:hover {
+        text-decoration: underline;
+      }
       a:hover {
         text-decoration: underline;
       }
@@ -44,11 +78,25 @@
         border-top: 1px solid #ddd;
         margin: 2em 0;
       }
+      hr {
+        border: none;
+        border-top: 1px solid #ddd;
+        margin: 2em 0;
+      }
 
       p {
         line-height: 1.7;
       }
+      p {
+        line-height: 1.7;
+      }
 
+      pre,
+      code {
+        background: #f4f4f4;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
       pre,
       code {
         background: #f4f4f4;
@@ -61,7 +109,16 @@
         padding-left: 1em;
         color: #666;
       }
+      blockquote {
+        border-left: 4px solid #ccc;
+        padding-left: 1em;
+        color: #666;
+      }
 
+      img {
+        max-width: 100%;
+        height: auto;
+      }
       img {
         max-width: 100%;
         height: auto;
@@ -78,7 +135,22 @@
         background: #fafafa; /* 기본 배경색 (흰색 계열) */
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
       }
+      /* =========================================
+       2. 컴포넌트 스타일 (Project Box, Card, Table)
+       ========================================= */
+      .project-box {
+        border: 2px solid #e0e0e0;
+        border-radius: 12px;
+        padding: 24px 20px;
+        margin: 32px 0;
+        background: #fafafa; /* 기본 배경색 (흰색 계열) */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
 
+      .project-box h3 {
+        margin-top: 0;
+        margin-bottom: 12px;
+      }
       .project-box h3 {
         margin-top: 0;
         margin-bottom: 12px;
@@ -91,7 +163,20 @@
       .project-box h5 {
         margin-bottom: 10px;
       }
+      .project-box p,
+      .project-box ul,
+      .project-box iframe,
+      .project-box h4,
+      .project-box h5 {
+        margin-bottom: 10px;
+      }
 
+      .featured-projects {
+        display: flex;
+        gap: 24px;
+        margin: 32px 0;
+        flex-wrap: wrap;
+      }
       .featured-projects {
         display: flex;
         gap: 24px;
@@ -110,7 +195,22 @@
         position: relative;
         min-width: 320px;
       }
+      .featured-card {
+        flex: 1 1 320px;
+        background: #fff;
+        border: 2px solid #e0e0e0;
+        border-radius: 16px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        padding: 28px 22px 56px 22px;
+        transition: box-shadow 0.2s;
+        position: relative;
+        min-width: 320px;
+      }
 
+      .featured-card:hover {
+        box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
+        border-color: #b3d1ff;
+      }
       .featured-card:hover {
         box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12);
         border-color: #b3d1ff;
@@ -121,7 +221,16 @@
         margin-bottom: 10px;
         font-size: 1.25em;
       }
+      .featured-card h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 1.25em;
+      }
 
+      .featured-card p,
+      .featured-card ul {
+        margin-bottom: 10px;
+      }
       .featured-card p,
       .featured-card ul {
         margin-bottom: 10px;
@@ -140,11 +249,37 @@
         transition: background 0.2s;
         z-index: 2;
       }
+      .featured-card .project-link {
+        position: absolute;
+        right: 22px;
+        bottom: 18px;
+        background: #0366d6;
+        color: #fff;
+        padding: 6px 14px;
+        border-radius: 8px;
+        font-size: 0.95em;
+        text-decoration: none;
+        transition: background 0.2s;
+        z-index: 2;
+      }
 
       .featured-card .project-link:hover {
         background: #024eaa;
       }
+      .featured-card .project-link:hover {
+        background: #024eaa;
+      }
 
+      .resume-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 24px 0;
+        font-size: 1em;
+        background: #f8fafc;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+      }
       .resume-table {
         width: 100%;
         border-collapse: collapse;
@@ -161,7 +296,15 @@
         padding: 14px 12px;
         text-align: left;
       }
+      .resume-table th,
+      .resume-table td {
+        padding: 14px 12px;
+        text-align: left;
+      }
 
+      .resume-table thead {
+        background: #e3eaf5;
+      }
       .resume-table thead {
         background: #e3eaf5;
       }
@@ -171,7 +314,15 @@
         color: #2d3a4a;
         border-bottom: 2px solid #d1d5db;
       }
+      .resume-table th {
+        font-weight: 600;
+        color: #2d3a4a;
+        border-bottom: 2px solid #d1d5db;
+      }
 
+      .resume-table tr {
+        border-bottom: 1px solid #e5e7eb;
+      }
       .resume-table tr {
         border-bottom: 1px solid #e5e7eb;
       }
@@ -179,7 +330,88 @@
       .resume-table tr:last-child {
         border-bottom: none;
       }
+      .resume-table tr:last-child {
+        border-bottom: none;
+      }
 
+      .resume-table tbody tr:hover {
+        background: #f1f5fb;
+      }
+
+      /* =========================================
+       3. 다크 모드 (Dark Mode Override)
+       * 반드시 맨 아래에 위치해야 위 설정을 덮어씌웁니다.
+       ========================================= */
+      @media (prefers-color-scheme: dark) {
+        html {
+          background: #1e1e1e;
+          color: #e0e0e0;
+        }
+
+        a {
+          color: #9cd9ff;
+        }
+
+        /* 제목 태그 색상 변경 */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+          color: #f0f0f0;
+        }
+
+        /* 프로젝트 박스 다크모드 적용 */
+        .project-box {
+          background: #2d2d2d;
+          border-color: #444;
+          color: #e0e0e0;
+        }
+
+        /* 대표 프로젝트 카드 다크모드 적용 */
+        .featured-card {
+          background: #2d2d2d;
+          border-color: #444;
+          color: #e0e0e0;
+        }
+
+        /* 이력 테이블 다크모드 적용 */
+        .resume-table {
+          background: #2d2d2d;
+          color: #e0e0e0;
+        }
+        .resume-table thead {
+          background: #3d3d3d;
+        }
+        .resume-table th {
+          color: #fff;
+          border-bottom: 2px solid #555;
+        }
+        .resume-table tr {
+          border-bottom: 1px solid #444;
+        }
+        .resume-table tbody tr:hover {
+          background: #383838;
+        }
+
+        /* 아이콘 반전 (Github 로고 등 검은색 아이콘을 흰색으로) */
+        img.icon-invert {
+          filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(1.05);
+        }
+
+        /* 인용구 및 코드블록 */
+        blockquote {
+          border-left-color: #555;
+          color: #aaa;
+        }
+        pre,
+        code {
+          background: #333;
+          color: #eee;
+        }
+      }
+    </style>
+  </head>
       .resume-table tbody tr:hover {
         background: #f1f5fb;
       }
@@ -271,6 +503,7 @@
     </p>
 
     <hr />
+    <hr />
 
     <h2>🏢 이력</h2>
     <table class="resume-table">
@@ -300,9 +533,16 @@
       <li>💻 <a href="https://github.com/mjmj1">GitHub</a></li>
       <li>📫 <a href="mailto:mjong3365@gmail.com">mjong3365@gmail.com</a></li>
     </ul>
+    <h2>📎 Contect</h2>
+    <ul>
+      <li>💻 <a href="https://github.com/mjmj1">GitHub</a></li>
+      <li>📫 <a href="mailto:mjong3365@gmail.com">mjong3365@gmail.com</a></li>
+    </ul>
 
     <hr />
+    <hr />
 
+    <h2>🛠 기술 스택</h2>
     <h2>🛠 기술 스택</h2>
 
     <p align="center">
@@ -319,6 +559,39 @@
       <sub><b>Game Engine</b> : Unity</sub>
     </p>
 
+    <p align="center">
+      <a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg"
+          width="40"
+          height="40"
+        />
+      </a>
+      <a href="https://isocpp.org" target="_blank">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+          width="40"
+          height="40"
+        />
+      </a>
+      <a href="https://www.java.com" target="_blank">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+          width="40"
+          height="40"
+        />
+      </a>
+      <a href="https://www.python.org" target="_blank">
+        <img
+          src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+          width="40"
+          height="40"
+        />
+      </a>
+    </p>
+    <p align="center">
+      <sub><b>Languages</b> : C# · C++ · Java · Python</sub>
+    </p>
     <p align="center">
       <a href="https://learn.microsoft.com/dotnet/csharp/" target="_blank">
         <img
@@ -430,6 +703,28 @@
       </p>
     </div>
     <hr />
+    <h2>🐈‍⬛ Github Stat</h2>
+    <div align="center">
+      <p>
+        <img
+          src="https://github-readme-stats.vercel.app/api/top-langs?username=mjmj1&show_icons=true&locale=en&layout=compact"
+          alt="mjmj1"
+        />
+      </p>
+      <p>
+        <img
+          src="https://github-readme-stats.vercel.app/api?username=mjmj1&show_icons=true&locale=en"
+          alt="mjmj1"
+        />
+      </p>
+      <p>
+        <img
+          src="https://github-readme-streak-stats.herokuapp.com/?user=mjmj1&"
+          alt="mjmj1"
+        />
+      </p>
+    </div>
+    <hr />
 
     <h2 id="featured">🚀 대표 프로젝트</h2>
     <div class="featured-projects">
@@ -473,7 +768,10 @@
     </div>
 
     <hr />
+    <hr />
 
+    <h1>📜 프로젝트</h1>
+    <h2>Unity</h2>
     <h1>📜 프로젝트</h1>
     <h2>Unity</h2>
 
@@ -755,6 +1053,8 @@
 
     <hr />
     <h2>Web</h2>
+    <hr />
+    <h2>Web</h2>
 
     <div class="project-box">
       <h3>말레이시아 해외 인턴십 프로젝트</h3>
@@ -864,6 +1164,7 @@
     </div>
 
     <p style="text-align: center; color: #777">© 2025 김만종 Portfolio</p>
+    <p style="text-align: center; color: #777">© 2025 김만종 Portfolio</p>
 
     <style>
       html[data-theme="dark"] img.icon-invert {
@@ -871,4 +1172,11 @@
       }
     </style>
   </body>
+    <style>
+      html[data-theme="dark"] img.icon-invert {
+        filter: invert(1) hue-rotate(180deg) brightness(1.1) contrast(1.05);
+      }
+    </style>
+  </body>
 </html>
+
