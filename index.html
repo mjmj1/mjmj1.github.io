@@ -261,6 +261,28 @@
         color: #aaa;
       }
 
+      .game-container {
+        position: relative;
+        width: 100%;
+        /* 16:9 비율 유지를 위한 패딩 (높이/너비 * 100) */
+        /* 만약 게임이 960x600이라면 (600/960)*100 = 62.5% */
+        padding-bottom: 62.5%;
+        height: 0;
+        overflow: hidden;
+        background: #000;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      }
+
+      .game-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
+      }
+
       pre,
       code {
         background: #333;
@@ -284,6 +306,15 @@
     <sub>관심 분야: Unity · Netcode for GameObjects · ML-Agents · Game Backend</sub>
   </p>
 
+  <div class="project-box" style="text-align: center; padding: 20px;">
+    <h3>🎮 Play Project</h3>
+    <p>현재 개발 중인 게임입니다. <br>
+      마우스 클릭만으로 조작하고 한 블럭 씩 배치하여 옆에 나온 모양을 만들어내면 파괴되고 점수를 얻게 됩니다.</p>
+
+    <div class="game-container">
+      <iframe src="./game_builds/index.html" title="Unity WebGL Game" scrolling="no"></iframe>
+    </div>
+  </div>
   <hr />
 
   <h2>🏢 이력</h2>
