@@ -15,12 +15,12 @@
   display: block;
   text-decoration: none;
 }
-.devlog-cards .card-link,
-.devlog-cards .card-link:hover,
-.devlog-cards .card-link:visited {
+
+.cards .card-link,
+.cards .card-link:hover,
+.cards .card-link:visited {
   color: inherit;
-  border-bottom: none !important;
-  box-shadow: none !important;
+  text-decoration: none;
 }
 
 .card {
@@ -32,7 +32,10 @@
   display: flex;
   flex-direction: column;
   gap: 6px;
-  transition: transform 0.12s, box-shadow 0.12s, border-color 0.12s;
+  transition:
+    transform 0.12s,
+    box-shadow 0.12s,
+    border-color 0.12s;
 }
 
 .card h3 {

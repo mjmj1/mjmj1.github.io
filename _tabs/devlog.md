@@ -14,7 +14,7 @@ permalink: /devlog/
   | reverse
 %}
 
-<div class="cards devlog-cards">
+<div class="cards">
   {% for p in devlog_posts %}
     <a class="card-link" href="{{ p.url | relative_url }}">
       <div class="card">
@@ -27,14 +27,15 @@ permalink: /devlog/
         <p class="meta">{{ p.date | date: "%Y-%m-%d" }}</p>
 
         <div class="tags">
-          {% if p.tech and p.tech.size > 0 %}
+          {% if p.tech %}
             {% for t in p.tech %}
               <span class="tag">{{ t }}</span>
             {% endfor %}
-          </div>
-        {% endif %}
+          {% endif %}
+        </div>
 
       </div>
+    </a>
 
 {% endfor %}
 
