@@ -1,14 +1,16 @@
-<!-- Google tag (gtag.js) -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
 <script
-  async
-  src="https://www.googletagmanager.com/gtag/js?id=G-0274PNC11H"
+  defer
+  src="https://www.googletagmanager.com/gtag/js?id={{ site.analytics.google.id }}"
 ></script>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag() {
-    dataLayer.push(arguments);
-  }
-  gtag("js", new Date());
+  document.addEventListener("DOMContentLoaded", () => {
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
 
-  gtag("config", "G-0274PNC11H");
+    gtag("js", new Date());
+    gtag("config", "{{ site.analytics.google.id }}");
+  });
 </script>
