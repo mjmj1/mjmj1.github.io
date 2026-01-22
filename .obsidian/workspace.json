@@ -182,8 +182,6 @@
   },
   "active": "6013c7fa4f262adc",
   "lastOpenFiles": [
-    "_sass/vendors/_bootstrap.scss",
-    "_sass/vendors/bootstrap.scss",
     "categories.md",
     "_site/categories/index.html",
     "_site/tabs/categories.md",
@@ -199,6 +197,7 @@
     "_site/categories/devlog/index.html",
     "_site/categories/devlog",
     "_site/index.html",
+    "_site/minigames/index.html",
     "_site/assets/minigames/one-block-puzzle/TemplateData/webmemd-icon.png",
     "_site/assets/minigames/one-block-puzzle/TemplateData/unity-logo-light.png",
     "_site/assets/minigames/one-block-puzzle/TemplateData/unity-logo-dark.png",
@@ -227,6 +226,7 @@
     "_posts/2019-08-08-write-a-new-post.md",
     "_posts/2019-08-08-text-and-typography.md",
     "_site/templates/post_template.md",
-    "_posts/2026-01-21-null.md"
+    "_posts/2026-01-21-null.md",
+    "assets/portfolio/무제.md"
   ]
 }
