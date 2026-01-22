@@ -182,6 +182,7 @@
   },
   "active": "6013c7fa4f262adc",
   "lastOpenFiles": [
+    "_site/assets/css/jekyll-theme-chirpy.css.map",
     "_sass/tokens/tech-stack.scss",
     "_sass/tokens/mz-cards.scss",
     "_config.yml",
@@ -198,7 +199,6 @@
     "_site/posts/ML-Agents-기반-자율주행-실험-프로젝트/index.html",
     "_site/posts/ML-Agents-기반-자율주행-실험-프로젝트",
     "_site/categories/study/index.html",
-    "_site/categories/study",
     "_site/assets/minigames/one-block-puzzle/TemplateData/webmemd-icon.png",
     "_site/assets/minigames/one-block-puzzle/TemplateData/unity-logo-light.png",
     "_site/assets/minigames/one-block-puzzle/TemplateData/unity-logo-dark.png",

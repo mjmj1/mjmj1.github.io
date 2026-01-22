@@ -1,8 +1,8 @@
-@use '../tokens/_tech-stack' as tech_stack;
-@use '../tokens/_mz-cards' as mz-cards;
+@use '../tokens/tech-stack';
+@use '../tokens/mz-cards';
 
 @mixin styles {
-  @include tech_stack.light;
+  @include tech-stack.light;
   @include mz-cards.light;
 
   /* Framework color */
