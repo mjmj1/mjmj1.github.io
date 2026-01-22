@@ -2,7 +2,7 @@
 @mixin light {
   --card-bg: #ffffff;
   --card-border: #e5e7eb;
-  --card-shadow: 0 8px 18px rgba(0, 0, 0, 0.05);
+  --card-shadow: 0 8px 18px rgba(0 0 0 / 5%);
 
   --card-title: #111827;
   --card-meta: #6b7280;
@@ -11,8 +11,8 @@
   --card-tag-border: #e5e7eb;
   --card-tag-text: #374151;
 
-  --card-hover-shadow: 0 14px 28px rgba(0, 0, 0, 0.09);
-  --card-hover-border: rgba(191, 214, 255, 1);
+  --card-hover-shadow: 0 14px 28px rgba(0 0 0 / 9%);
+  --card-hover-border: rgba(191 214 255 / 1);
 
   /* accents */
   --card-accent-study: #16a34a;
@@ -27,7 +27,7 @@
 @mixin dark {
   --card-bg: #111827;
   --card-border: #1f2937;
-  --card-shadow: 0 10px 22px rgba(0, 0, 0, 0.35);
+  --card-shadow: 0 10px 22px rgba(0 0 0 / 35%);
 
   --card-title: #e5e7eb;
   --card-meta: #9ca3af;
@@ -36,8 +36,8 @@
   --card-tag-border: #243041;
   --card-tag-text: #e5e7eb;
 
-  --card-hover-shadow: 0 16px 34px rgba(0, 0, 0, 0.45);
-  --card-hover-border: rgba(191, 214, 255, 0.45);
+  --card-hover-shadow: 0 16px 34px rgba(0 0 0 / 45%);
+  --card-hover-border: rgba(191 214 255 / 45%);
 
   /* accents */
   --card-accent-study: #22c55e;
