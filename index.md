@@ -48,7 +48,6 @@ Unity 기반 분산 권한 멀티플레이 구조와 ML-Agents를 활용한 AI N
       <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
     </div>
   </div>
-
 </div>
 
 ## MINI GAME
