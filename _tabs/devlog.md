@@ -6,35 +6,42 @@ order: 2
 permalink: /devlog/
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/cards.css?v=20260121' | relative_url }}">
-
 {% assign devlog_posts = site.posts
   | where_exp: "p", "p.categories contains 'devlog'"
   | sort: "date"
   | reverse
 %}
 
-<div class="cards">
+<div class="mz-cards mz-cards--devlog">
   {% for p in devlog_posts %}
-    <a class="card-link" href="{{ p.url | relative_url }}">
-      <div class="card">
+    <a class="mz-card-link" href="{{ p.url | relative_url }}">
+      <article class="mz-card">
 
         {% if p.project %}
-          <div class="project-label">{{ p.project }}</div>
+          <div class="mz-card-project">{{ p.project }}</div>
         {% endif %}
 
-        <h3>{{ p.title }}</h3>
-        <p class="meta">{{ p.date | date: "%Y-%m-%d" }}</p>
+        <time class="mz-card-date">
+          {{ p.date | date: "%Y-%m-%d" }}
+        </time>
 
-        <div class="tags">
-          {% if p.tech %}
-            {% for t in p.tech %}
-              <span class="tag">{{ t }}</span>
-            {% endfor %}
-          {% endif %}
+        <h3 class="mz-card-title">{{ p.title }}</h3>
+
+        {% if p.summary %}
+          <p class="mz-card-summary">{{ p.summary }}</p>
+        {% else %}
+          <p class="mz-card-summary">{{ p.excerpt | strip_html | truncate: 120 }}</p>
+        {% endif %}
+
+        {% if p.tech %}
+        <div class="mz-card-tags">
+          {% for t in p.tech %}
+            <span class="mz-card-tag">{{ t }}</span>
+          {% endfor %}
         </div>
+        {% endif %}
 
-      </div>
+      </article>
     </a>
 
 {% endfor %}

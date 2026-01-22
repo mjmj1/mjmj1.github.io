@@ -1,0 +1,55 @@
+/* _sass/addon/tech-stack.scss */
+
+.stack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.stack-card {
+  background: var(--stack-bg);
+  border: 1px solid var(--stack-border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  box-shadow: var(--stack-shadow);
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.stack-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--stack-shadow-hover);
+  border-color: var(--stack-border-hover);
+}
+
+.stack-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--stack-title);
+  margin-bottom: 6px;
+}
+
+.stack-icons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 6px;
+}
+
+.stack-desc {
+  font-size: 0.88rem;
+  color: var(--stack-muted);
+  line-height: 1.35;
+  margin-top: 2px;
+}
+
+.stack-icon {
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  filter: none;
+}

@@ -16,7 +16,7 @@
   "folder_templates": [
     {
       "folder": "_posts",
-      "template": "templates/post.md"
+      "template": "templates/post_template.md"
     },
     {
       "folder": "",

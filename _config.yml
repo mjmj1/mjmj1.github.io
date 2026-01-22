@@ -19,7 +19,7 @@ title: MJ Blog # the main title
 tagline: Game development · Backend Engineer # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
-  포트폴리오 · 기술 블로그
+  포트폴리오 · 블로그
 
 # Fill in the protocol & hostname for your site.
 # E.g. 'https://username.github.io', note that it does not end with a '/'.

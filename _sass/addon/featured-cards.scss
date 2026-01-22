@@ -1,0 +1,317 @@
+/* =========================================================
+ * Featured Cards (Hero style) - no full-card link
+ * ======================================================= */
+
+.mz-feature-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  margin-top: 18px;
+  margin-bottom: 22px;
+}
+
+.mz-feature-card {
+  position: relative;
+  border-radius: 20px;
+  padding: 20px;
+
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: var(--card-shadow);
+
+  transition:
+    transform 0.14s ease,
+    box-shadow 0.14s ease,
+    border-color 0.14s ease;
+}
+
+.mz-feature-card:hover {
+  /* transform 제거 */
+  box-shadow: var(--card-hover-shadow);
+  border-color: var(--card-hover-border);
+}
+
+.mz-feature-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  box-shadow: inset 0 2px 0 0 var(--card-accent, var(--card-accent-portfolio));
+  opacity: 0.8;
+}
+
+.mz-feature-top {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.mz-feature-kicker {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: var(--card-meta);
+}
+
+.mz-feature-date {
+  font-size: 0.86rem;
+  color: var(--card-meta);
+}
+
+.mz-feature-title {
+  margin: 0;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  font-weight: 800;
+  color: var(--card-title);
+}
+
+.mz-feature-summary {
+  margin: 8px 0 6px;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: var(--card-meta);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mz-feature-awards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+  margin-bottom: 10px;
+}
+
+.mz-feature-award {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+
+  background: var(--card-tag-bg);
+  border: 1px solid var(--card-tag-border);
+  color: var(--card-tag-text);
+  font-weight: 700;
+}
+
+/* =========================================================
+ * Overview + Tech (inside Featured Card)
+ * ======================================================= */
+
+.mz-feature-overview-box {
+  margin-top: 10px;
+  padding: 12px 14px;
+  border-radius: 16px;
+
+  background: var(--card-tag-bg);
+  border: 1px solid var(--card-border);
+}
+
+/* 개요 라벨/값 정렬 */
+.mz-feature-overview {
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.mz-feature-overview > div {
+  display: grid;
+  grid-template-columns: 4.2rem 1fr;
+  gap: 10px;
+  align-items: baseline;
+}
+
+.mz-feature-overview dt {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  color: var(--card-meta);
+  opacity: 0.85;
+}
+
+.mz-feature-overview dd {
+  margin: 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: var(--card-title);
+  opacity: 0.92;
+}
+
+/* overview 박스 안의 tech 태그(기존 mz-feature-tags 재사용) */
+.mz-feature-overview-box .mz-feature-tags {
+  margin-top: 10px; /* 기존 14px보다 조금 타이트 */
+  padding-top: 10px;
+  border-top: 1px dashed color-mix(in srgb, var(--card-border) 70%, transparent);
+}
+
+/* overview 박스 안 태그는 살짝 더 컴팩트 */
+.mz-feature-overview-box .mz-feature-tag {
+  font-size: 0.76rem;
+  padding: 4px 10px;
+  font-weight: 700;
+}
+
+.mz-feature-body {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: var(--card-meta);
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.mz-feature-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 14px;
+  padding-top: 12px;
+
+  border-top: 1px solid color-mix(in srgb, var(--card-border) 70%, transparent);
+}
+
+.mz-feature-tag {
+  font-size: 0.78rem;
+  padding: 4px 10px;
+  border-radius: 999px;
+
+  background: var(--card-tag-bg);
+  border: 1px solid var(--card-tag-border);
+  color: var(--card-tag-text);
+}
+
+/* =========================================================
+ * Actions (buttons/links)
+ * ======================================================= */
+
+.mz-feature-actions {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* 링크 밑줄/box-shadow underline 제거는 버튼에만 적용 */
+.mz-feature-btn,
+.mz-feature-btn:hover,
+.mz-feature-btn:visited,
+.mz-feature-btn:active,
+.mz-feature-btn:focus,
+.mz-feature-btn:focus-visible {
+  text-decoration: none !important;
+  box-shadow: none !important;
+  border-bottom: 0 !important;
+}
+
+.mz-feature-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 8px 12px;
+  border-radius: 999px;
+
+  font-size: 0.86rem;
+  font-weight: 700;
+
+  background: var(--card-tag-bg);
+  border: 1px solid var(--card-tag-border);
+  color: var(--card-tag-text);
+
+  transition:
+    transform 0.12s ease,
+    border-color 0.12s ease;
+}
+
+.mz-feature-btn:hover {
+  transform: translateY(-1px);
+  border-color: var(--card-hover-border);
+}
+
+.mz-feature-btn:focus-visible {
+  outline: 2px solid var(--card-accent, var(--card-accent-portfolio));
+  outline-offset: 3px;
+}
+
+.mz-feature-content {
+  margin-top: 10px;
+  color: var(--card-meta);
+}
+
+/* paragraph / lists */
+.mz-feature-content p {
+  margin: 0 0 10px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.mz-feature-content ul,
+.mz-feature-content ol {
+  margin: 0 0 10px;
+  padding-left: 18px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+}
+
+.mz-feature-content li {
+  margin: 3px 0;
+}
+
+/* headings inside snippet */
+.mz-feature-content h2 {
+  margin: 14px 0 8px;
+  font-size: 1.02rem;
+  font-weight: 850;
+  color: var(--card-title);
+}
+
+.mz-feature-content h3 {
+  margin: 12px 0 6px;
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--card-title);
+}
+
+/* blockquote */
+.mz-feature-content blockquote {
+  margin: 10px 0;
+  padding: 10px 12px;
+  border-left: 3px solid var(--card-hover-border);
+  background: var(--card-tag-bg);
+  border-radius: 12px;
+  color: var(--card-meta);
+}
+
+/* images/videos (keep, but safe) */
+.mz-feature-content img,
+.mz-feature-content video {
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+  margin: 10px 0;
+}
+
+/* code blocks (keep, but safe) */
+.mz-feature-content pre {
+  margin: 10px 0;
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  background: var(--card-tag-bg);
+  overflow-x: auto;
+}
+
+.mz-feature-content code {
+  font-size: 0.88rem;
+}

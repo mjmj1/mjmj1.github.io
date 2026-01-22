@@ -6,31 +6,42 @@ order: 1
 permalink: /study/
 ---
 
-<link rel="stylesheet" href="{{ '/assets/css/cards.css?v=20260121' | relative_url }}">
-
 {% assign study_posts = site.posts
   | where_exp: "p", "p.categories contains 'study'"
   | sort: "date"
   | reverse
 %}
 
-<div class="cards">
+<div class="mz-cards mz-cards--study">
   {% for p in study_posts %}
-    <a class="card-link" href="{{ p.url | relative_url }}">
-      <div class="card">
+    <a class="mz-card-link" href="{{ p.url | relative_url }}">
+      <article class="mz-card">
 
-        <h3>{{ p.title }}</h3>
-        <p class="meta">{{ p.date | date: "%Y-%m-%d" }}</p>
+        {% if p.project %}
+          <div class="mz-card-project">{{ p.project }}</div>
+        {% endif %}
 
-        <div class="tags">
-          {% if p.tech %}
-            {% for t in p.tech %}
-              <span class="tag">{{ t }}</span>
-            {% endfor %}
-          {% endif %}
+        <time class="mz-card-date">
+          {{ p.date | date: "%Y-%m-%d" }}
+        </time>
+
+        <h3 class="mz-card-title">{{ p.title }}</h3>
+
+        {% if p.summary %}
+          <p class="mz-card-summary">{{ p.summary }}</p>
+        {% else %}
+          <p class="mz-card-summary">{{ p.excerpt | strip_html | truncate: 120 }}</p>
+        {% endif %}
+
+        {% if p.tech %}
+        <div class="mz-card-tags">
+          {% for t in p.tech %}
+            <span class="mz-card-tag">{{ t }}</span>
+          {% endfor %}
         </div>
+        {% endif %}
 
-      </div>
+      </article>
     </a>
 
 {% endfor %}

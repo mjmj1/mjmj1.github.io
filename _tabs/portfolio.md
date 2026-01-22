@@ -55,36 +55,130 @@ Unity 기반 분산 권한 멀티플레이 구조와 ML-Agents를 활용한 AI N
 
 </div>
 
-## feature Projects
+{%- assign project_posts = site.posts
+  | where_exp: "p", "p.categories contains 'devlog'"
+  | where_exp: "p", "p.project"
+  | sort: "date"
+  | reverse
+-%}
+
+{%- assign featured_posts = project_posts
+  | where_exp: "p", "p.feature == true or p.feature == 'true'"
+-%}
+
+{%- assign normal_posts = project_posts
+  | where_exp: "p", "p.feature != true and p.feature != 'true'"
+-%}
+
+## Featured Projects
+
+<div class="mz-feature-cards">
+  {% for p in featured_posts %}
+    <article class="mz-feature-card">
+
+      <div class="mz-feature-top">
+        <div class="mz-feature-kicker">FEATURED</div>
+        <time class="mz-feature-date">{{ p.date | date: "%Y-%m-%d" }}</time>
+      </div>
+
+      <h3 class="mz-feature-title">
+        {% if p.project %}{{ p.project }}{% else %}{{ p.title }}{% endif %}
+      </h3>
+
+      {% if p.summary %}
+        <p class="mz-feature-summary">{{ p.summary }}</p>
+      {% endif %}
+
+      {% if p.awards %}
+        <div class="mz-feature-awards">
+          {% for a in p.awards %}
+            <span class="mz-feature-award">{{ a }}</span>
+          {% endfor %}
+        </div>
+      {% endif %}
+
+      {% if p.overview or p.tech %}
+        <div class="mz-feature-overview-box">
+        {% if p.overview %}
+          <dl class="mz-feature-overview">
+            {% if p.overview.period %}<div><dt>기간</dt><dd>{{ p.overview.period }}</dd></div>{% endif %}
+            {% if p.overview.team %}<div><dt>인원</dt><dd>{{ p.overview.team }}</dd></div>{% endif %}
+            {% if p.overview.role %}<div><dt>역할</dt><dd>{{ p.overview.role }}</dd></div>{% endif %}
+            {% if p.overview.platform %}<div><dt>플랫폼</dt><dd>{{ p.overview.platform }}</dd></div>{% endif %}
+            {% if p.overview.link %}<div><dt>링크</dt><dd><a href="{{ p.overview.link }}">{{ p.overview.link }}</a></dd></div>{% endif %}
+          </dl>
+        {% endif %}
+
+        {% if p.tech %}
+          <div class="mz-feature-tags">
+            {% for t in p.tech %}
+              <span class="mz-feature-tag">{{ t }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        </div>
+      {% endif %}
+
+      {%- assign snippet = "" -%}
+
+      {%- assign parts = p.content | split: "<!--pf-start-->" -%}
+      {%- if parts.size > 1 -%}
+        {%- assign snippet = parts[1] | split: "<!--pf-end-->" | first -%}
+      {%- else -%}
+        {%- assign parts2 = p.content | split: "<!--pf-a-start-->" -%}
+        {%- if parts2.size > 1 -%}
+          {%- assign snippet = parts2[1] | split: "<!--pf-a-end-->" | first -%}
+        {%- endif -%}
+      {%- endif -%}
+
+      <div class="mz-feature-content">
+        {% if snippet != "" %}
+          {{ snippet }}
+        {% endif %}
+
+      </div>
+
+      <div class="mz-feature-actions">
+        <a class="mz-feature-btn" href="{{ p.url | relative_url }}">글 전체 보기</a>
+        <a class="mz-feature-btn mz-feature-btn--primary"
+           href="{{ p.url | relative_url }}#impl">핵심 로직 바로가기</a>
+      </div>
+
+    </article>
+
+{% endfor %}
+
+</div>
 
 ## Projects
 
-{% assign project_posts = site.posts | where_exp: "p", "p.categories contains 'project'" %}
+<div class="mz-cards mz-cards--portfolio">
+  {% for p in normal_posts %}
+    <a class="mz-card-link" href="{{ p.url | relative_url }}">
+      <article class="mz-card">
+        {% if p.project %}
+          <div class="mz-card-project">{{ p.project }}</div>
+        {% endif %}
 
-{% for proj in site.data.projects | sort: "order" %}
+        <time class="mz-card-date">{{ p.date | date: "%Y-%m-%d" }}</time>
+        <h3 class="mz-card-title">{{ p.title }}</h3>
 
-### {{ proj.title }}
+        {% if p.summary %}
+          <p class="mz-card-summary">{{ p.summary }}</p>
+        {% else %}
+          <p class="mz-card-summary">{{ p.excerpt | strip_html | truncate: 140 }}</p>
+        {% endif %}
 
-{{ proj.one_liner }}
-
-- 기간: {{ proj.period }}
-- Tech: {{ proj.tech | join: " · " }}
-  {% if proj.awards %}
-- 성과: {{ proj.awards | join: " / " }}
-  {% endif %}
-
-{% assign posts_for_proj = project_posts | where: "project", proj.id %}
-
-{% if posts_for_proj.size > 0 %}
-**관련 글**
-{% for p in posts_for_proj limit:5 %}
-
-- [{{ p.title }}]({{ p.url | relative_url }}){% if p.summary %} — {{ p.summary }}{% endif %}
-  {% endfor %}
-  {% else %}
-  관련 글 준비 중
-  {% endif %}
-
----
+        {% if p.tech %}
+          <div class="mz-card-tags">
+            {% for t in p.tech %}
+              <span class="mz-card-tag">{{ t }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </article>
+    </a>
 
 {% endfor %}
+
+</div>
