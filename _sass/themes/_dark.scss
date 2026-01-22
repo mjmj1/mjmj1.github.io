@@ -1,10 +1,10 @@
-@use '../tokens/_tech-stack' as tech_stack;
-@use '../tokens/_mz-cards' as mz-cards;
+@use '../tokens/tech-stack';
+@use '../tokens/mz-cards';
 
 @mixin styles {
   color-scheme: dark;
 
-  @include tech_stack.dark;
+  @include tech-stack.dark;
   @include mz-cards.dark;
 
   /* Framework color */
