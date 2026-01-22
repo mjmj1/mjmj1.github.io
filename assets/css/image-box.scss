@@ -1,0 +1,31 @@
+.image-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin: 1.5rem 0;
+}
+
+.image-row {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.image-column {
+  flex-direction: column;
+}
+
+.image-item {
+  text-align: center;
+}
+
+.image-item img {
+  display: block;
+  margin: 0 auto;
+}
+
+.image-item sub {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--text-muted-color);
+}

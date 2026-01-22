@@ -1,0 +1,25 @@
+/* light theme tokens */
+@mixin light {
+  --stack-bg: #f9fafb;
+  --stack-border: #e5e7eb;
+  --stack-title: #111827;
+  --stack-text: #374151;
+  --stack-muted: #6b7280;
+
+  --stack-shadow: 0 6px 16px rgba(0 0 0 / 5%);
+  --stack-shadow-hover: 0 10px 24px rgba(0 0 0 / 8%);
+  --stack-border-hover: #bfd6ff;
+}
+
+/* dark theme tokens */
+@mixin dark {
+  --stack-bg: #424242;
+  --stack-border: #243041;
+  --stack-title: #e5e7eb;
+  --stack-text: #cbd5e1;
+  --stack-muted: #9ca3af;
+
+  --stack-shadow: 0 6px 16px rgba(0 0 0 / 35%);
+  --stack-shadow-hover: 0 10px 24px rgba(0 0 0 / 45%);
+  --stack-border-hover: rgba(191 214 255 / 45%);
+}
