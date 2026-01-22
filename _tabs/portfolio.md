@@ -63,11 +63,11 @@ Unity 기반 분산 권한 멀티플레이 구조와 ML-Agents를 활용한 AI N
 -%}
 
 {%- assign featured_posts = project_posts
-  | where_exp: "p", "p.feature == true or p.feature == 'true'"
+  | where_exp: "p", "p.feature == true"
 -%}
 
 {%- assign normal_posts = project_posts
-  | where_exp: "p", "p.feature != true and p.feature != 'true'"
+  | where_exp: "p", "p.feature != true"
 -%}
 
 ## Featured Projects
