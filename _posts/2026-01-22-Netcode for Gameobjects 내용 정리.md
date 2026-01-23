@@ -44,10 +44,27 @@ awards: []
 - `OnSessionOwnerPromoted(ulong newSessionOwnerClientId)` : 분산 권한 토폴로지에서 세션 오너가 승격될 때 전체 클라이언트에 발생하는 이벤트
 - `OnReanticipate(double lastRoundTripTime)` : Anticipation(예측/재시뮬레이션) 관련 값들의 재적용 이후 호출되는 콜백
 
+### 분산 권한 설정 방법
+
+[Quick Start 공식 문서](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.5/manual/learn/distributed-authority-quick-start.html)
+
+![](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.5/manual/images/learn/distributed-authority-quick-start/network-manager.png){: width="400"}
+_1. 빈 오브젝트에 NetworkManager 스크립트 적용_
+
+![](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.5/manual/images/learn/distributed-authority-quick-start/network-topology.png){: width="400"}
+_2. 인스펙터에서 Network Topology설정 변경_
+
+![](https://docs.unity3d.com/Packages/com.unity.netcode.gameobjects@2.5/manual/images/learn/distributed-authority-quick-start/transport.png){: width="400"}
+_3. Network Transport 수정_
+
+
 ### 이슈 및 해결
 
 - 씬 변경 시 네트워크 연결이 종료되는 현상
-  - 해결: 다른 스크립트에서 `DontDestroyOnLoad`를 사용하던 것이 원인. `NetworkManager`를 별도의 전용 오브젝트로 분리하여 해결
+  - 원인
+	  - 게임 오브젝트에 다른 스크립트를 같이 적용함
+  - 해결
+	  - `NetworkManager`를 별도의 전용 오브젝트로 분리하여 해결
 
 ---
 
@@ -166,7 +183,8 @@ NetworkManager.Singleton.SceneManager.LoadScene(sceneName, LoadSceneMode.Single)
 ### 이슈 및 해결
 
 - `ISession` 오너와 `NetworkManager` 오너 불일치로 씬 변경 불가, 호스트를 변경할 때 발생
-  - 해결: ISession 오너를 기준으로 게임 흐름을 제어하고, RPC를 통해 NetworkManager에 씬 변경 요청
+  - 해결
+	  - ISession 오너를 기준으로 게임 흐름을 제어하고, RPC를 통해 NetworkManager에 씬 변경 요청
 
 ---
 
@@ -399,7 +417,8 @@ public void RuntimeSpecifiedRpc(RpcParams rpcParams = default)
 ### 이슈 및 해결
 
 - AI NPC와의 상호작용을 할 때, 어디로 Rpc를 보내야하는지
-  - 해결: AI NPC의 소유권을 가진 클라이언트에게 RPC를 전송하도록 `SendTo.SpecifiedInParams` 사용
+  - 해결
+	  - AI NPC의 소유권을 가진 클라이언트에게 RPC를 전송하도록 `SendTo.SpecifiedInParams` 사용
 
 ---
 
@@ -461,9 +480,11 @@ public void RuntimeSpecifiedRpc(RpcParams rpcParams = default)
 ### 이슈 및 해결
 
 - Awake에서 `GetComponent<T>` 호출 시 NullException 발생
-  - 해결: 초기화 및 이벤트 구독을 `OnNetworkSpawn()`에서 수행
+  - 해결
+	  - 초기화 및 이벤트 구독을 `OnNetworkSpawn()`에서 수행
 - `OnNetworkSpawn()`에서 이벤트가 중복 실행됨
-  - 해결: 각 인스턴스에서 호출되므로 `IsOwner` 기준으로 분기 처리
+  - 해결
+	  - 각 인스턴스에서 호출되므로 `IsOwner` 기준으로 분기 처리
 
 ---
 
@@ -533,5 +554,7 @@ public void RuntimeSpecifiedRpc(RpcParams rpcParams = default)
 ### 이슈 및 해결
 
 - 구 형태의 맵에서 다른 오브젝트 이동이 툭툭 끊기듯 보이는 현상 발생
-  - 원인: `Use Rigidbody For Motion` 옵션을 사용하면 동기화가 FixedUpdate로 적용됨
-  - 해결: `Use Rigidbody For Motion` 옵션 비활성화
+  - 원인
+	  - `Use Rigidbody For Motion` 옵션을 사용하면 동기화가 FixedUpdate로 적용됨
+  - 해결
+	  - `Use Rigidbody For Motion` 옵션 비활성화
