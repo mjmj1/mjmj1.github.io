@@ -78,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "c74b9edad3ed83f7",
@@ -187,8 +186,10 @@
   },
   "active": "f3c1e35422ca593d",
   "lastOpenFiles": [
-    "_posts/2026-01-22-Throw it.md",
+    "_posts/2026-01-26-ASP.Net 서버 개발.md",
+    "_posts/2026-01-22-AWS S3 기반 파일 공유 서비스.md",
     "_tabs/portfolio.md",
+    "_posts/2026-01-22-Throw it.md",
     "_site/assets/img/Pasted image 20260126212325.png",
     "_site/assets/img/Pasted image 20260126191214.png",
     "_site/assets/img/Pasted image 20260126190712.png",
@@ -197,7 +198,6 @@
     "_posts/2026-01-22-The Zoo.md",
     "_site/posts/ASP.Net-서버-개발/index.html",
     "_site/posts/ASP.Net-서버-개발",
-    "_posts/2026-01-26-ASP.Net 서버 개발.md",
     "assets/img/Pasted image 20260126212325.png",
     "assets/img/Pasted.md",
     "_site/assets/img/Pasted.md",
@@ -210,7 +210,6 @@
     "index.md",
     "portfolio.md",
     "_site/portfolio.md",
-    "_posts/2026-01-22-AWS S3 기반 파일 공유 서비스.md",
     "_posts/2026-01-22-생성형 AI 기반 난독증 아동 교재 생성 서비스.md",
     "_posts/2026-01-22-강의실 배정 최적화 시스템.md",
     "_posts/2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트.md",
