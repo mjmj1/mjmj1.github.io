@@ -1,4 +1,10 @@
 {
   "newFileLocation": "current",
-  "attachmentFolderPath": "assets/img"
+  "attachmentFolderPath": "assets/img",
+  "pdfExportSettings": {
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "1",
+    "downscalePercent": 100
+  }
 }
