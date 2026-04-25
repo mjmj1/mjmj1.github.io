@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "index.md",
+                "file": "_posts/2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "index"
+              "title": "2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트"
             }
           }
         ]
@@ -113,12 +113,26 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "_posts/2026-01-22-The Zoo.md",
+                "file": "_posts/2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "2026-01-22-The Zoo 의 나가는 링크"
+              "title": "2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트 의 나가는 링크"
+            }
+          },
+          {
+            "id": "9ecc5a31cf81edd9",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "모든 속성"
             }
           },
           {
@@ -137,41 +151,25 @@
             }
           },
           {
-            "id": "9ecc5a31cf81edd9",
-            "type": "leaf",
-            "state": {
-              "type": "all-properties",
-              "state": {
-                "sortOrder": "frequency",
-                "showSearch": false,
-                "searchQuery": ""
-              },
-              "icon": "lucide-archive",
-              "title": "모든 속성"
-            }
-          },
-          {
             "id": "dc1b605efda8d99e",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "_posts/2026-02-24-DirectX 11 학습.md",
+                "file": "_posts/2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "2026-02-24-DirectX 11 학습 의 개요"
+              "title": "2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트 의 개요"
             }
           }
-        ],
-        "currentTab": 4
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -187,23 +185,26 @@
   },
   "active": "6055ae1583cdde37",
   "lastOpenFiles": [
+    "_posts/2026-01-22-강의실 배정 최적화 시스템.md",
+    "_posts/2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트.md",
+    "_posts/2026-01-22-생성형 AI 기반 난독증 아동 교재 생성 서비스.md",
+    "_posts/2026-01-22-AWS S3 기반 파일 공유 서비스.md",
+    "_posts/2026-01-22-The Zoo.md",
+    "_posts/2026-01-22-Netcode for Gameobjects 내용 정리.md",
+    "_site/posts/DirectX-11-학습/index.html",
+    "_site/posts/DirectX-11-학습",
+    "_posts/2026-01-22-WALL.md",
+    "_posts/2026-01-26-ASP.Net 서버 개발.md",
+    "_posts/2026-01-22-Throw it.md",
+    "index.md",
+    "devlog.md",
     "categories.md",
     "docs/CHANGELOG.md",
     "assets/pdf/dyslexia.pdf",
     "assets/pdf/hanbat-box-pdf.pdf",
-    "_posts/2026-01-22-The Zoo.md",
-    "_posts/2026-01-22-AWS S3 기반 파일 공유 서비스.md",
-    "_posts/2026-01-22-Netcode for Gameobjects 내용 정리.md",
-    "_posts/2026-01-22-생성형 AI 기반 난독증 아동 교재 생성 서비스.md",
-    "_posts/2026-01-22-강의실 배정 최적화 시스템.md",
-    "_posts/2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트.md",
     "README.md",
-    "index.md",
     "templates/post_template.md",
     "_posts/2026-02-24-DirectX 11 학습.md",
-    "_posts/2026-01-22-Throw it.md",
-    "_posts/2026-01-22-WALL.md",
-    "_posts/2026-01-26-ASP.Net 서버 개발.md",
     "assets/img/Pasted image 20260224233533.png",
     "assets/img/Pasted image 20260126212325.png",
     "assets/img/Pasted image 20260126191214.png",
@@ -226,11 +227,8 @@
     "_site/assets/img/Pasted.md",
     "portfolio.md",
     "_site/portfolio.md",
-    "_posts/2026-01-23-null.md",
     "_site/posts/null/index.html",
     "_site/posts/null",
-    "_site/categories/study/index.html",
-    "_site/categories/study",
-    "_site/posts/생성형-AI-기반-난독증-아동-교재-생성-서비스/index.html"
+    "_site/categories/study/index.html"
   ]
 }
