@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트.md",
+                "file": "_posts/2026-01-22-The Zoo.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트"
+              "title": "2026-01-22-The Zoo"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "_posts/2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트.md",
+                "file": "_posts/2026-01-22-The Zoo.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트 의 백링크"
+              "title": "2026-01-22-The Zoo 의 백링크"
             }
           },
           {
@@ -185,26 +185,30 @@
   },
   "active": "6055ae1583cdde37",
   "lastOpenFiles": [
-    "_posts/2026-01-22-강의실 배정 최적화 시스템.md",
-    "_posts/2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트.md",
-    "_posts/2026-01-22-생성형 AI 기반 난독증 아동 교재 생성 서비스.md",
+    "_posts/2026-01-22-Netcode for Gameobjects 내용 정리.md",
     "_posts/2026-01-22-AWS S3 기반 파일 공유 서비스.md",
     "_posts/2026-01-22-The Zoo.md",
-    "_posts/2026-01-22-Netcode for Gameobjects 내용 정리.md",
+    "_posts/2026-01-22-생성형 AI 기반 난독증 아동 교재 생성 서비스.md",
+    "_posts/2026-01-22-강의실 배정 최적화 시스템.md",
+    "_posts/2026-01-21-ML-Agents 기반 자율주행 실험 프로젝트.md",
+    "assets/avatar.jpg",
+    "_site/assets/pdf/portfolio.pdf",
+    "assets/pdf/portfolio.pdf",
+    "index.md",
+    "portfolio.md",
+    "categories.md",
+    "_posts/2026-02-24-DirectX 11 학습.md",
+    "_posts/2026-01-26-ASP.Net 서버 개발.md",
+    "_posts/2026-01-22-WALL.md",
     "_site/posts/DirectX-11-학습/index.html",
     "_site/posts/DirectX-11-학습",
-    "_posts/2026-01-22-WALL.md",
-    "_posts/2026-01-26-ASP.Net 서버 개발.md",
     "_posts/2026-01-22-Throw it.md",
-    "index.md",
     "devlog.md",
-    "categories.md",
     "docs/CHANGELOG.md",
     "assets/pdf/dyslexia.pdf",
     "assets/pdf/hanbat-box-pdf.pdf",
     "README.md",
     "templates/post_template.md",
-    "_posts/2026-02-24-DirectX 11 학습.md",
     "assets/img/Pasted image 20260224233533.png",
     "assets/img/Pasted image 20260126212325.png",
     "assets/img/Pasted image 20260126191214.png",
@@ -220,15 +224,11 @@
     "_site/assets/img/Pasted image 20260126212325.png",
     "_site/assets/img/Pasted image 20260126191214.png",
     "_site/assets/img/Pasted image 20260126190712.png",
-    "_site/assets/img/Pasted image 20260126185523.png",
     "_site/posts/ASP.Net-서버-개발/index.html",
     "_site/posts/ASP.Net-서버-개발",
     "assets/img/Pasted.md",
     "_site/assets/img/Pasted.md",
-    "portfolio.md",
     "_site/portfolio.md",
-    "_site/posts/null/index.html",
-    "_site/posts/null",
-    "_site/categories/study/index.html"
+    "_site/posts/null/index.html"
   ]
 }

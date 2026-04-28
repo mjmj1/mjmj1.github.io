@@ -8,58 +8,27 @@ permalink: /portfolio/
 
 # 🙇 김만종 | Game & Backend Developer
 
-#### **새로운 기술에 대한 호기심을 성장의 동력으로 삼습니다**  
+#### **새로운 기술에 대한 호기심을 성장의 동력으로 삼습니다**
+
 변화하는 기술 트렌드 앞에서도 두려움 없이 배우고 적용하는 것을 주저하지 않습니다.  
 이러한 태도로 **멀티플레이 환경 + 강화학습 AI** 분야를 선택하여 게임 프로젝트를 완수했습니다.  
 그 결과, **교내 캡스톤디자인 장려상**, **대전 게임 브릿지 데이 우수상**을 수상했습니다.
 
 #### **끊임없이 질문하고 탐구하며, 어제보다 더 나은 코드를 고민합니다.**
+
 [게임잼 프로젝트](/posts/Throw-it/)에서 확장성만을 고려한 상속 구조가 오히려 팀원들의 작업 효율을 떨어뜨리는 경험을 했습니다.  
 이 경험을 통해 **동료가 쉽게 이해하고 확장할 수 있는 친절한 코드**를 작성하기 위해 노력을 기울이고 있습니다.
 
-<sub>관심 분야: Unity · Netcode for GameObjects · ML-Agents · Game Backend</sub>
+<sub>관심 분야: C# · .NET · Unity · Backend</sub>
 
-## 🏢 이력
+## 📖 Projects Summary
 
-| 기간                      | 이름           | 내용                                                                 |
-| ----------------------- | ------------ | ------------------------------------------------------------------ |
-| 2023.05.22 ~ 2024.03.01 | 비엔에프테크놀로지(주) | 원자력 발전소 모니터링·조작 SW 개발, 운영 SW 유지보수, <br/>테스트 자동화 매크로, SRS/SDD 문서 작성 |
-| 2025.06.30 ~ 2025.08.20 | 아이와즈 (인턴)    | AI 기반 엣지 디바이스 얼굴 인식<br/>Jetson Nano, ONNX/TensorRT 파이프라인           |
-
-## 🛠 스킬
-
-<div class="stack-grid">
-
-  <div class="stack-card">
-    <div class="stack-title">Game Engine</div>
-    <div class="stack-icons">
-      <img class="stack-icon"
-           src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/unity/unity-original.svg"
-           alt="Unity">
-    </div>
-    <div class="stack-desc">멀티플레이 게임 개발 및 AI NPC 구현</div>
-  </div>
-
-  <div class="stack-card">
-    <div class="stack-title">Web / Backend</div>
-    <div class="stack-icons">
-      <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring">
-      <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django">
-      <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL">
-    </div>
-    <div class="stack-desc">서비스 API, OCR·AI 파이프라인 구현</div>
-  </div>
-
-  <div class="stack-card">
-    <div class="stack-title">Tools</div>
-    <div class="stack-icons">
-      <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" alt="Postman">
-      <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
-      <img class="stack-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
-    </div>
-  </div>
-
-</div>
+<iframe
+  src="/assets/pdf/portfolio.pdf"
+  width="100%"
+  height="600px"
+  style="border: none;"
+></iframe>
 
 {%- assign project_posts = site.posts
   | where_exp: "p", "p.categories contains 'devlog'"
