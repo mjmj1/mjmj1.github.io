@@ -21,20 +21,12 @@ permalink: /portfolio/
 
 <sub>관심 분야: C# · .NET · Unity · Backend</sub>
 
-## 📖 Projects Summary
-
-<iframe
-  src="/assets/pdf/portfolio.pdf"
-  width="100%"
-  height="600px"
-  style="border: none;"
-></iframe>
+---
 
 {%- assign project_posts = site.posts
   | where_exp: "p", "p.categories contains 'devlog'"
   | where_exp: "p", "p.project"
   | sort: "date"
-  | reverse
 -%}
 
 {%- assign featured_posts = project_posts
@@ -44,6 +36,8 @@ permalink: /portfolio/
 {%- assign normal_posts = project_posts
   | where_exp: "p", "p.feature != true"
 -%}
+
+---
 
 ## 👑 Featured Projects
 
@@ -77,10 +71,13 @@ permalink: /portfolio/
         {% if p.overview %}
           <dl class="mz-feature-overview">
             {% if p.overview.period %}<div><dt>기간</dt><dd>{{ p.overview.period }}</dd></div>{% endif %}
-            {% if p.overview.team %}<div><dt>인원</dt><dd>{{ p.overview.team }}</dd></div>{% endif %}
-            {% if p.overview.role %}<div><dt>역할</dt><dd>{{ p.overview.role }}</dd></div>{% endif %}
-            {% if p.overview.platform %}<div><dt>플랫폼</dt><dd>{{ p.overview.platform }}</dd></div>{% endif %}
-            {% if p.overview.link %}<div><dt>링크</dt><dd><a href="{{ p.overview.link }}">{{ p.overview.link }}</a></dd></div>{% endif %}
+            {% if p.overview.team %}<div><dt>팀 구성</dt><dd>{{ p.overview.team }}</dd></div>{% endif %}
+            {% if p.overview.team %}<div><dt>핵심 기여</dt><dd>
+              {% for r in p.overview.roles %}
+                • {{ r }}<br/>
+              {% endfor %}
+
+            </dd></div>{% endif %}
           </dl>
         {% endif %}
 
@@ -116,7 +113,7 @@ permalink: /portfolio/
       <div class="mz-feature-actions">
         <a class="mz-feature-btn" href="{{ p.url | relative_url }}">글 전체 보기</a>
         <a class="mz-feature-btn mz-feature-btn--primary"
-           href="{{ p.url | relative_url }}#impl">핵심 로직 바로가기</a>
+           href="{{ p.url | relative_url }}#impl">핵심 시스템 바로가기</a>
       </div>
 
     </article>
