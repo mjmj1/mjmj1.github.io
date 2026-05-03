@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_posts/2026-01-22-강의실 배정 최적화 시스템.md",
+                "file": "_posts/2026-01-22-생성형 AI 기반 난독증 아동 교재 생성 서비스.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-01-22-강의실 배정 최적화 시스템"
+              "title": "2026-01-22-생성형 AI 기반 난독증 아동 교재 생성 서비스"
             }
           }
         ]
@@ -186,6 +186,7 @@
   },
   "active": "6055ae1583cdde37",
   "lastOpenFiles": [
+    "_posts/2026-01-22-강의실 배정 최적화 시스템.md",
     "_site/posts/강의실-배정-최적화-시스템/index.html",
     "_site/posts/강의실-배정-최적화-시스템",
     "_site/posts/2026-01-22-강의실-배정-최적화-시스템/index.html",
@@ -195,7 +196,6 @@
     "_posts/2026-01-22-Netcode for Gameobjects 내용 정리.md",
     "_posts/2026-01-22-The Zoo.md",
     "_posts/2026-01-22-AWS S3 기반 파일 공유 서비스.md",
-    "_posts/2026-01-22-강의실 배정 최적화 시스템.md",
     "_posts/2026-01-22-Throw it.md",
     "_site/posts/생성형-AI-기반-난독증-아동-교재-생성-서비스/index.html",
     "_site/posts/생성형-AI-기반-난독증-아동-교재-생성-서비스",
@@ -203,7 +203,6 @@
     "_site/posts/2026-01-22-생성형-AI-기반-난독증-아동-교재-생성-서비스",
     "_site/posts/The-Zoo/index.html",
     "_site/posts/The-Zoo",
-    "_site/posts/2026-01-22-The-Zoo/index.html",
     "_tabs/portfolio.md",
     "_tabs/mini_game.md",
     "assets/img/the-zoo/TornadoHit.gif",
